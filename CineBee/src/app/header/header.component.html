@@ -1,1 +1,29 @@
-<p>header works!</p>
+<html>
+    <head>
+        <script>
+            window.onscroll=function() {
+                scrollFunction()
+            };
+            function scrollFunction() {
+                if(document.body.scrollTop>80||document.documentElement.scrollTop>80) {
+                    document.getElementById("navbar").style.padding="10px 10px";
+                    document.getElementById("logo").style.fontSize="25px";
+                }
+                else {
+                    document.getElementById("navbar").style.padding="50px 10px";
+                    document.getElementById("logo").style.fontSize="35px";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="navbar">
+            <a href="#default" id="logo">Logo</a>
+            <div id="navbar-right">
+                <a href="#ratings">Ratings</a>
+                <a href="#reviews">Reviwes</a>
+                <a href="#wishlist">WishList</a>
+            </div>
+        </div>
+    </body>
+</html>
