@@ -1,10 +1,9 @@
 .header {
-    padding-top: 2px;
     padding-bottom: 5px;
 }
 #navbar {
     overflow: hidden;
-    background-color:#263238;
+    background-color:#263228;
     padding:20px 8px;
     transition: 0.5s;
     width: 100%;

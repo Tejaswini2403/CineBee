@@ -1,5 +1,4 @@
 import { Component, OnInit  } from '@angular/core';
-import { IgxIconService } from "igniteui-angular";
 
 @Component({
   selector: 'app-header',
@@ -8,9 +7,7 @@ import { IgxIconService } from "igniteui-angular";
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private iconService: IgxIconService) { }
+  constructor() { }
   ngOnInit(): void {
-    //creating icon with svg
-    this.iconService.addSvgIcon("menu", "../../assets/images/svg/menu.svg", "filter-icons");
   }
 }
