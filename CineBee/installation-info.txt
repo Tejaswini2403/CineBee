@@ -1,1 +1,2 @@
-npm i -S ng-simple-slideshow
+npm i -S ng-simple-slideshow   (not used)
+npm i angular-image-slider     (used for slideshow displaying)

@@ -7,12 +7,15 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { SlidesShowComponent } from './slides-show/slides-show.component';
+import { SliderModule } from 'angular-image-slider';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    SlidesShowComponent,
   ],
   imports: [
     BrowserModule,
@@ -20,6 +23,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
     MatIconModule,
     MatMenuModule,
     MDBBootstrapModule.forRoot(),
+    SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
