@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SlidesShowComponent } from './slides-show/slides-show.component';
 import { SliderModule } from 'angular-image-slider';
+import { PosterComponent } from './poster/poster.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { SliderModule } from 'angular-image-slider';
     HeaderComponent,
     FooterComponent,
     SlidesShowComponent,
+    PosterComponent,
   ],
   imports: [
     BrowserModule,
