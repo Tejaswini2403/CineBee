@@ -1,7 +1,35 @@
 <html>
     <body>
-        <div>
-            <img id="logo" src="../../assets/images/moviePosters/img.jfif">
+        <header><app-header></app-header></header>
+        <div class="container">
+            <div class="movie-poster">
+                <img id="poster" src="../../assets/images/moviePosters/img.jfif">
+            </div>
+            <div class="castcrew">
+                <b><h1><marquee> Slideshow of cast and crew need to be displayed here</marquee></h1></b>
+            </div>
+            <div class="container">
+                <div class="row">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="con">
+                    <marquee><h1><b>Need to display reviews and ratings</b></h1></marquee>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:3px">
+                    <div class="short-div3">
+                        <b>Add to WishList</b>
+                        <mat-icon class="material-icons i">add_circle</mat-icon>
+                    </div>
+                    <div class="short-div1">
+                        <b>Give Rating</b>
+                        <mat-icon class="material-icons i">add_circle</mat-icon>
+                    </div>
+                    <div class="short-div2">
+                        <b>Write Review</b>
+                        <mat-icon class="material-icons i">add_circle</mat-icon>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
+        <footer><app-footer></app-footer></footer>
     </body>
 </html>

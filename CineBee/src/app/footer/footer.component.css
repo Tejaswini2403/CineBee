@@ -7,3 +7,11 @@
 #foot {
     background-color: #263228;
 }
+
+
+@media screen and (max-width:580px) {
+    #foot {
+        padding: 20px 10px !important;
+        width: 580px;
+    }
+}

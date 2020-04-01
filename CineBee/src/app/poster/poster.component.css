@@ -1,0 +1,54 @@
+.movie-poster {
+    justify-content: center;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+#poster {
+    height: 200px;
+    width: max-content;
+}
+.castcrew {
+    color: gold;
+    size: 15px;
+    padding-bottom: 10px;
+}
+.container {
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.row {
+    height: 600px;
+}
+.short-div1 {
+    height: 150px;
+    padding-left: 248px;
+    display: flex;
+    align-items: center;
+}
+.short-div2 {
+    height:300px;
+    justify-content: right;
+    text-align: right;
+    padding-left: 238px;
+    display: flex;
+    align-items: flex-start;
+}
+.short-div3 {
+    height: 150px;
+    justify-content: right;
+    text-align: right;
+    padding-left: 219px;
+    display: flex;
+    align-items: flex-end;
+}
+::ng-deep .mat-icon {
+    color: green;
+    height:50px ;
+    width:50px ;
+    font-size:50px ;
+}
+#con {
+    display: flex;
+    align-items: center;
+}
