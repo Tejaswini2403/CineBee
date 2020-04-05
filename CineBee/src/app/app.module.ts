@@ -10,6 +10,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { SlidesShowComponent } from './slides-show/slides-show.component';     
 import { SliderModule } from 'angular-image-slider';
 import { PosterComponent } from './poster/poster.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PosterComponent } from './poster/poster.component';
     FooterComponent,
     SlidesShowComponent,
     PosterComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

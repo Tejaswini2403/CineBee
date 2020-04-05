@@ -1,35 +1,41 @@
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="author" content="" />
-        
-        <script>
-            window.onscroll=function() {
-                scrollFunction()
-            };
-            function scrollFunction() {
-                if(document.body.scrollTop>80||document.documentElement.scrollTop>80) {
-                    document.getElementById("navbar").style.padding="10px 10px";
-                    document.getElementById("logo").style.fontSize="25px";
-                }
-                else {
-                    document.getElementById("navbar").style.padding="20px 8px";
-                    document.getElementById("logo").style.fontSize="35px";
-                }
-            }
-        </script>
-    </head>
-    <body>
-        <div class="header">
-            <div id="navbar">
-                <img id="logo" src="../../assets/images/logo.png">
-                <div id="navbar-right">
-                    <a href="#ratings">Ratings</a>
-                    <a href="#reviews">Reviews</a>
-                    <a href="#wishlist">WishList</a>
+<header id="head">
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark " [containerInside]="false">
+        <!-- Navbar brand -->
+        <mdb-navbar-brand><img class="navbar-brand" id="logo" src="../../assets/images/logo.png"></mdb-navbar-brand>
+        <!-- Collapsible content -->
+        <links>
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Ratings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>Reviwes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" mdbWavesEffect>WishList</a>
+            </li>
+            <li>
+                <form class="form-inline waves-light" mdbWavesEffect>
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    </div>
+                </form>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item">
+            <a class="nav-link">
+                <div class="btn-group" mdbDropdown>
+                <mdb-icon fas icon="ellipsis-v" mdbDropdownToggle></mdb-icon>
+                <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Feedback</a>
                 </div>
-            </div>
-        </div>
-    </body>
-</html> 
+                </div>
+            </a>
+            </li>
+        </ul>
+        </links>
+        <!-- Collapsible content -->
+    </mdb-navbar>
+</header>
