@@ -1,2 +1,5 @@
 npm i -S ng-simple-slideshow   (not used)
 npm i angular-image-slider     (used for slideshow displaying)
+npm install --save hammerjs
+npm install @angular/material @angular/cdk --save
+npm i @ng-bootstrap/ng-bootstrap
