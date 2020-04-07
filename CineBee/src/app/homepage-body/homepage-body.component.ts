@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-slides-show',
-  templateUrl: './slides-show.component.html',
-  styleUrls: ['./slides-show.component.css']
+  selector: 'app-homepage-body',
+  templateUrl: './homepage-body.component.html',
+  styleUrls: ['./homepage-body.component.css']
 })
-export class SlidesShowComponent implements OnInit {
+export class HomepageBodyComponent implements OnInit {
   public imagesUrl;
   constructor() { 
   }
@@ -33,5 +33,4 @@ export class SlidesShowComponent implements OnInit {
       '../../assets/images/moviePosters/img17.jfif',
     ];
   }
-
 }
