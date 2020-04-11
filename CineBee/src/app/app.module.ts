@@ -6,6 +6,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';   
 import { SliderModule } from 'angular-image-slider';
 import { RouterModule } from '@angular/router';
+import { IgxIconModule } from 'igniteui-angular';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FooterComponent } from './footer/footer.component';
 import { AppComponent } from './app.component';
@@ -42,6 +44,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatMenuModule,
     MDBBootstrapModule.forRoot(),
     SliderModule,
+    IgxIconModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path:'', component:HomepageBodyComponent },
       { path:'ratings', component:RatingsComponent },

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-homepage-body',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageBodyComponent implements OnInit {
   public imagesUrl;
-  constructor() { 
+  temp ='hello';
+  img;
+  constructor(private api:APIService) { 
   }
 
   ngOnInit(): void {
@@ -32,5 +35,9 @@ export class HomepageBodyComponent implements OnInit {
       '../../assets/images/moviePosters/img16.jfif',
       '../../assets/images/moviePosters/img17.jfif',
     ];
+    this.api.apiCall().subscribe((data)=>{
+      this.temp=data['results'][0]['title']
+      this.img='https://image.tmdb.org/t/p/w500'+data['results'][0]['poster_path']
+    })
   }
 }
