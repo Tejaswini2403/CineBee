@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AutofillMonitor} from '@angular/cdk/text-field';
-import {AfterViewInit, ElementRef, OnDestroy, ViewChild} from '@angular/core';
+import { Router } from '@angular/router';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -8,23 +8,22 @@ import {AfterViewInit, ElementRef, OnDestroy, ViewChild} from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 
-export class LoginComponent implements AfterViewInit, OnDestroy {
-  @ViewChild('first', {read: ElementRef}) firstName: ElementRef<HTMLElement>;
-  @ViewChild('last', {read: ElementRef}) lastName: ElementRef<HTMLElement>;
-  firstNameAutofilled: boolean;
-  lastNameAutofilled: boolean;
-
-  constructor(private _autofill: AutofillMonitor) {}
-
-  ngAfterViewInit() {
-    this._autofill.monitor(this.firstName)
-        .subscribe(e => this.firstNameAutofilled = e.isAutofilled);
-    this._autofill.monitor(this.lastName)
-        .subscribe(e => this.lastNameAutofilled = e.isAutofilled);
+export class LoginComponent implements OnInit {
+  showErrorMessage = false;
+  constructor(private router:Router, private user:UserService) { }
+  ngOnInit() {
   }
+  loginUser(e) {
+    e.preventDefault();
+    var username = e.target.elements[0].value;
+    var password = e.target.elements[1].value;
+    if(username == 'admin' && password == 'admin') {
+      this.user.setUserLoggedIn();
+      this.router.navigate(['homepage']);
+    }
+    else{
+        this.showErrorMessage = true;
+    }
 
-  ngOnDestroy() {
-    this._autofill.stopMonitoring(this.firstName);
-    this._autofill.stopMonitoring(this.lastName);
   }
 }
