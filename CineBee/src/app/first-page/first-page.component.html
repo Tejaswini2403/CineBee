@@ -1,0 +1,30 @@
+<header id="head">
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark " [containerInside]="false">
+        <!-- Navbar brand -->
+        <mdb-navbar-brand><img routerLink='' class="navbar-brand" id="logo" src="../../assets/images/logo.png"></mdb-navbar-brand>
+        <!-- Collapsible content -->
+        <links>
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto nav-flex-icons">
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink='/login' mdbWavesEffect>Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link waves-light" routerLink='/registration' mdbWavesEffect>Register</a>
+            </li>
+            <li>
+                <form class="form-inline waves-light" mdbWavesEffect>
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    </div>
+                </form>
+            </li>
+        </ul>
+        </links>
+        <!-- Collapsible content -->
+    </mdb-navbar>
+</header>
+
+
+<div><app-homepage-body></app-homepage-body></div>
+<footer><app-footer></app-footer></footer>

@@ -10,6 +10,6 @@ export class APIService {
 
   apiCall()
   {
-    return this.http.get('https://api.themoviedb.org/3/trending/movie/week?api_key=10cd0855af375ef0e13db6f232000053');
+    return this.http.get(' http://www.omdbapi.com/?s=Batman&page=2&apikey=8046dab1');
   }
 }

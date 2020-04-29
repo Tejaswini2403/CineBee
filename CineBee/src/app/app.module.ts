@@ -8,6 +8,9 @@ import { SliderModule } from 'angular-image-slider';
 import { RouterModule } from '@angular/router';
 import { IgxIconModule } from 'igniteui-angular';
 import { HttpClientModule } from '@angular/common/http';
+import { SlideshowModule } from 'ng-simple-slideshow';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
 
 import { FooterComponent } from './footer/footer.component';
 import { AppComponent } from './app.component';
@@ -21,6 +24,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { HomepageBodyComponent } from './homepage-body/homepage-body.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { FirstPageComponent } from './first-page/first-page.component';
 
 @NgModule({
   declarations: [
@@ -36,25 +42,42 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FeedbackComponent,
     HomepageBodyComponent,
     PageNotFoundComponent,
+    LoginComponent,
+    RegistrationComponent,
+    FirstPageComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatButtonModule,
+    MatInputModule,
     MatMenuModule,
     MDBBootstrapModule.forRoot(),
     SliderModule,
     IgxIconModule,
     HttpClientModule,
+    SlideshowModule,
     RouterModule.forRoot([
-      { path:'', component:HomepageBodyComponent },
+      { path:'', component:FirstPageComponent },
+      { path:'homepage' ,component:HomePageComponent},
+      { path:'homepagebody', component:HomepageBodyComponent },
       { path:'ratings', component:RatingsComponent },
       { path:'reviews', component:ReviewsComponent },
       { path:'wishlist', component:WishlistComponent },
       { path:'profile', component:ProfileComponent },
       { path:'feedback', component:FeedbackComponent },
+      { path: 'poster', component:PosterComponent},
+      { path:'login', component:LoginComponent },
+      { path:'registration', component:RegistrationComponent },
       { path:'**', component:PageNotFoundComponent }
     ])
+  ],
+  exports: [
+    
+    MatButtonModule,
+    MatInputModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent],

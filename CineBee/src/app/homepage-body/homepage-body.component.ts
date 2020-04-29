@@ -8,8 +8,8 @@ import { APIService } from '../api.service';
 })
 export class HomepageBodyComponent implements OnInit {
   public imagesUrl;
-  temp ='hello';
-  img;
+  public temp ='hello';
+  public img;
   constructor(private api:APIService) { 
   }
 
@@ -36,8 +36,9 @@ export class HomepageBodyComponent implements OnInit {
       '../../assets/images/moviePosters/img17.jfif',
     ];
     this.api.apiCall().subscribe((data)=>{
-      this.temp=data['results'][0]['title']
-      this.img='https://image.tmdb.org/t/p/w500'+data['results'][0]['poster_path']
+      this.temp=data['Search'][0]['Title']
+      //this.img='https://image.tmdb.org/t/p/w500'+data['results'][0]['poster_path']
+      this.img=data['Search'][0]['Poster']
     })
   }
 }

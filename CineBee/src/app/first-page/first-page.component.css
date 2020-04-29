@@ -1,0 +1,11 @@
+#head {
+    background-color:#263228;
+}
+#logo {
+    height: 60px;
+    width: 100px;
+}
+.sear {
+    background-color:#263228;
+    float: right;
+}
