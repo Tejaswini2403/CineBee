@@ -35,10 +35,10 @@ export class HomepageBodyComponent implements OnInit {
       '../../assets/images/moviePosters/img16.jfif',
       '../../assets/images/moviePosters/img17.jfif',
     ];
+    this.api.search('Bheeshma'),
     this.api.apiCall().subscribe((data)=>{
-      this.temp=data['Search'][0]['Title']
-      //this.img='https://image.tmdb.org/t/p/w500'+data['results'][0]['poster_path']
-      this.img=data['Search'][0]['Poster']
+      this.temp=data['Title']
+      this.img=data['Poster']
     })
   }
 }

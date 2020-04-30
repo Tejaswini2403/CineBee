@@ -1,25 +1,60 @@
-.movie-poster {
-    justify-content: center;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 10px;
-}
-#poster {
-    height: 200px;
-    width: max-content;
-}
-.castcrew {
-    color: gold;
-    size: 15px;
-    padding-bottom: 10px;
+.movie_details {
+    background-color: black;
 }
 .container {
+    background-color: black;
+    color: white;
+}
+#poster {
+    padding: 50px;
+}
+#details {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 70px;
+}
+#title {
+    text-align: left; 
+    font-weight: 550;
+    font-size: 250%;
+}
+#imdbrating {
+    text-align: right;
+}
+#i1 {
+    color: gray;
+    margin-right: 17px;
+    font-size: 75%;
+}
+#i2 {
+    font-weight: 450;
+    font-size: 200%;
+}
+#i3 {
+    color: gray;
+    padding-left: 15px;
     padding-bottom: 5px;
-    padding-top: 5px;
+    
 }
-.row {
-    height: 600px;
+#i4 {
+    padding-left: 17px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-weight: 400;
+    font-size: 100%;
 }
+#i5 {
+    text-align: left;
+    padding-bottom: 5px;
+    color: gray;
+}
+#i6 {
+    text-align: left;
+    padding-bottom: 5px;
+}
+
+
 .short-div1 {
     height: 150px;
     padding-left: 248px;

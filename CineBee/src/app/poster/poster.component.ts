@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APIService } from '../api.service';
 
 @Component({
   selector: 'app-poster',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PosterComponent implements OnInit {
 
-  constructor() { }
+  public info;
+  constructor(private api:APIService) { }
 
   ngOnInit(): void {
+    this.api.search('Bheeshma'),
+    this.api.apiCall().subscribe((data)=>{
+      this.info=data
+    })
   }
 
 }
