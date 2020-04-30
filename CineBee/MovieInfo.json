@@ -805,7 +805,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BM2E5YTgwY2UtZTRiMS00ZmE0LTg1ODAtNGIxN2I5NDIzYTM2XkEyXkFqcGdeQXVyMzYxOTQ3MDg@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -833,7 +838,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BZGVkOWI4YzUtYTU1ZC00NzZjLTk4ZDgtODAxZDg0OGVlYzlhXkEyXkFqcGdeQXVyMTA0OTExMjQw._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -861,7 +871,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BMWVlZmNkMjctN2VkNS00ODA2LWEwZjYtM2EyMzFiN2M1NzUzXkEyXkFqcGdeQXVyNjkwOTg4MTA@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -889,7 +904,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BNWZjN2M3OGYtZjg5Zi00MzU2LWFkZDctYWNhYjc3MGI1ZDMxXkEyXkFqcGdeQXVyNDgzODc1NDk@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1532,7 +1552,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "N/A",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1560,7 +1585,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BNzUxMDYzMjUtZDEzYi00NWMxLThkZGYtYTgwNDEwZWY3MWI0XkEyXkFqcGdeQXVyOTU0ODcyNTY@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1588,7 +1618,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "N/A",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1699,9 +1734,9 @@
             "Website": "N/A",
             "Response": "True"
         },
-        "Navelru... Half Boiled":
+        "Navelru Half Boiled":
         {
-            "Title": "Navelru... Half Boiled",
+            "Title": "Navelru Half Boiled",
             "Year": "2019",
             "Rated": "N/A",
             "Released": "06 Dec 2019",
@@ -1748,7 +1783,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BMTk3NDAxZjktODAzMS00ZmFlLTg1NTYtZjQzMTA2YTJkMjljXkEyXkFqcGdeQXVyNjY0OTkzMjk@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1809,7 +1849,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BM2IyYzdhZTctODVlZC00ZTZjLThkMTktNmEzY2UwZDI4MzhmXkEyXkFqcGdeQXVyNjU0MDM3OTk@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1837,7 +1882,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BZGU2OTE0NjQtYzFlMS00OWU1LTgwNmUtMTE5ZjljMDE3OTZmXkEyXkFqcGdeQXVyMTA0NzIyMDc1._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1865,7 +1915,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "N/A",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1926,7 +1981,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "N/A",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -1989,7 +2049,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BNDg5MDBkMDgtODU3My00NTQxLWFhNDgtZDg2NDQ0MGM5N2JhXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2050,7 +2115,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BMjYxMmE0YzItNzE3Mi00MTg0LWE0NzMtNTk3YzczZTE5YTBhXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2078,7 +2148,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BMTIxMTBhMTgtYTI5OS00ZWRhLWI2NGQtN2IzNzg0YWQ0ZDFiXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2139,7 +2214,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BOTJjNzMzM2UtNTE4ZS00M2Y4LTgxYTctMWIwMGQxZDU3YzkxXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2200,7 +2280,12 @@
             "Country": "Canada, India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BYjgyNmM5MDItNjczOC00YjlmLTlmOGQtOTYwOTA1Njk0MDY2XkEyXkFqcGdeQXVyMzI0NjI4Njk@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2261,7 +2346,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BNjNmZTY4OGYtZTdmYi00MDgyLWI3NjMtZTNmNGNlNDM4NTdiXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2289,7 +2379,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BZmMwODU4NTUtZjZhYy00ZTBiLWIxZTYtODM4YmY1ZTMwZjRhXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2350,7 +2445,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BYjYzNDk2ZWMtMjBhNC00MWUyLTg2YTYtMmY1MzYyMjI3NGE2XkEyXkFqcGdeQXVyNDE3MjYxODQ@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
@@ -2378,7 +2478,12 @@
             "Country": "India",
             "Awards": "N/A",
             "Poster": "https://m.media-amazon.com/images/M/MV5BNjVjMjdhNWEtNjcwNy00ZDFjLTk4YWMtMDc1NjI2NmNkZjhjXkEyXkFqcGdeQXVyNjM3NjI0Mjk@._V1_SX300.jpg",
-            "Ratings": [],
+            "Ratings": [
+                {
+                    "Source": "Internet Movie Database",
+                    "Value": "6.4/10"
+                }
+            ],
             "Metascore": "N/A",
             "imdbRating": "N/A",
             "imdbVotes": "N/A",
