@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SlideshowModule } from 'ng-simple-slideshow';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { FooterComponent } from './footer/footer.component';
 import { AppComponent } from './app.component';
@@ -58,6 +59,8 @@ import { FirstPageComponent } from './first-page/first-page.component';
     IgxIconModule,
     HttpClientModule,
     SlideshowModule,
+    FormsModule, 
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path:'', component:FirstPageComponent },
       { path:'homepage' ,component:HomePageComponent},

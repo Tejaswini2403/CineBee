@@ -3,3 +3,4 @@ npm i angular-image-slider
 npm install --save hammerjs
 npm install @angular/material @angular/cdk --save
 npm i @ng-bootstrap/ng-bootstrap
+npm install firebase angularfire2 --save

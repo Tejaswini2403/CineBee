@@ -15,7 +15,7 @@ div.input {
 div.input label {
 	position: absolute;
 	top: 0;
-	transform: translateY(-50%);
+	transform: translateY(-50%) ;
 	left: 10px;
 	background: white;
 	padding: 5px 2px;
