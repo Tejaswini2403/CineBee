@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import {UserService} from '../user.service';
 
 // import custom validator to validate that password and confirm password fields match
 import {must} from './Val/must.validator';
@@ -14,7 +16,7 @@ export class RegistrationComponent implements OnInit {
   registerForm: FormGroup;
     submitted = false;
 
-    constructor(private formBuilder: FormBuilder) { }
+    constructor(private formBuilder: FormBuilder,private router:Router, private user:UserService) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -37,10 +39,9 @@ export class RegistrationComponent implements OnInit {
         this.submitted = true;
 
         // stop here if form is invalid
-        if (this.registerForm.invalid) {
+        if(!this.registerForm.invalid){
             return;
         }
-
         // display form values on success
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
     }
