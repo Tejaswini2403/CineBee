@@ -1,32 +1,27 @@
-﻿<!--<form>
-    <mat-form-field>
-      <mat-label>First name</mat-label>
-      <input matInput #first>
-      <mat-hint *ngIf="firstNameAutofilled">Autofilled!</mat-hint>
-    </mat-form-field>
-    <mat-form-field>
-      <mat-label>Last name</mat-label>
-      <input matInput #last>
-      <mat-hint *ngIf="lastNameAutofilled">Autofilled!</mat-hint>
-    </mat-form-field>
-    <button mat-raised-button [routerLink]="['/homepage']">Submit</button>
-  </form>!-->
-
-      
-     
-<form (submit)="loginUser($event)">
-	<div class="input">
-		<label>Username</label>
-		<input type="text">
-	</div>
-	<div class="input">
-		<label>Password</label>
-		<input type="password">
-	</div>
-	<div class="input">
-		<input type="submit" value="Login">
-  </div>
-  <div *ngIf="showErrorMessage">
-    <h1>Invalid username or password Please try again :(</h1>
-  </div>
-</form>
+﻿<html>
+  <body id="in2">
+    <div class="card m-3" id="in1">
+      <h5 class="card-header">Login</h5>
+      <form (submit)="loginUser($event)">
+        <div class="card-body" >
+          <div class="form-group ">
+            <label>Email</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="form-group ">
+            <label>Password</label>
+            <input type="password" class="form-control" />
+          </div>
+          <div *ngIf="showErrorMessage" id="errorMessage">
+            <p>Invalid Email or Password</p>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary mr-1" >Login</button>
+            &nbsp;&nbsp;&nbsp;
+            <a routerLink='/registration'>Create an account?</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

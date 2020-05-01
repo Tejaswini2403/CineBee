@@ -1,0 +1,11 @@
+#id1 {
+    height: 80%;
+    width: 100%;
+}
+#id2 {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
