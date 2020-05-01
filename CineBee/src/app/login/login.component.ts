@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {UserService} from '../user.service';
+import { FirebaseUsageService } from '../Services/firebase-usage.service';
 
 @Component({
   selector: 'app-login',
@@ -10,14 +11,16 @@ import {UserService} from '../user.service';
 
 export class LoginComponent implements OnInit {
   showErrorMessage = false;
-  constructor(private router:Router, private user:UserService) { }
+  temp;
+  constructor(private router:Router, private user:UserService, private userDetails:FirebaseUsageService) { }
   ngOnInit() {
   }
   loginUser(e) {
     e.preventDefault();
     var username = e.target.elements[0].value;
     var password = e.target.elements[1].value;
-    if(username == 'admin' && password == 'admin') {
+    this.temp=this.userDetails.fun(username,password);
+    if(this.temp) {
       this.user.setUserLoggedIn();
       this.router.navigate(['homepage']);
     }

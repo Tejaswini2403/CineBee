@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormControlName } from '@angular/forms';
-
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {must} from './Val/must.validator';
 import { FirebaseUsageService } from '../Services/firebase-usage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration',
@@ -15,27 +15,9 @@ export class RegistrationComponent implements OnInit {
     submitted = false;
     a:Number;
     b:Number;
-    users=[
-        {
-            fn:'Tejaswini',
-            ln:'Repala',
-            emailId:'trepala999@gmail.com',
-            pass:'cinebee143'
-        },
-        {
-            fn:'Swetha',
-            ln:'Gupta Gande',
-            emailId:'swetha12gupta@gmail.com',
-            pass:'cinebee143'
-        },
-        {
-            fn:'Vishnu',
-            ln:'Sai',
-            emailId:'vishnusai3206@gmail.com',
-            pass:'cinebee143'
-        },
-    ]
-    constructor(private formBuilder: FormBuilder,private userDetails:FirebaseUsageService) { }
+    users
+    
+    constructor(private router:Router, private formBuilder: FormBuilder,private userDetails:FirebaseUsageService) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -48,6 +30,7 @@ export class RegistrationComponent implements OnInit {
         }, {
             validator: must('password', 'confirmPassword')
         });
+        this.users=this.userDetails.users
     }
 
     // convenience getter for easy access to form fields
@@ -67,7 +50,7 @@ export class RegistrationComponent implements OnInit {
         else{
             this.onAddUser(this.registerForm.value.firstName,this.registerForm.value.lastName,this.registerForm.value.email,this.registerForm.value.password)
             this.onSaveUser();
-            //this.router.navigate(['homepage']);
+            this.router.navigate(['/homepage']);
         }
     }
 
@@ -78,10 +61,10 @@ export class RegistrationComponent implements OnInit {
 
     onAddUser(fm1,lm1,emailId1,pass1){
         this.users.push({
-            fn:String(fm1),
-            ln:String(lm1),
-            emailId:String(emailId1),
-            pass:String(pass1)
+            fn:fm1,
+            ln:lm1,
+            emailId:emailId1,
+            pass:pass1
         })
     }
     onSaveUser(){

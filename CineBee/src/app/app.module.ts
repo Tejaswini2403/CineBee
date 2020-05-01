@@ -74,6 +74,7 @@ import { FirebaseUsageService } from './Services/firebase-usage.service';
       { path: 'poster', component:PosterComponent},
       { path:'login', component:LoginComponent },
       { path:'registration', component:RegistrationComponent },
+      { path:'firstpage', component:FirstPageComponent },
       { path:'**', component:PageNotFoundComponent }
     ])
   ],
