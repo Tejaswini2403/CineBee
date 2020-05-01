@@ -30,7 +30,6 @@ export class FirebaseUsageService {
   constructor(private http:HttpClient) { }
 
   saveUser(users:any[]){
-    //return this.http.post(this.url,users);
     return this.http.put(this.url,users)
   }
   fun(email,password)
@@ -41,5 +40,8 @@ export class FirebaseUsageService {
       }
     });
     return this.bool;
+  }
+  fetchData() {
+    return this.http.get(this.url)
   }
 }
