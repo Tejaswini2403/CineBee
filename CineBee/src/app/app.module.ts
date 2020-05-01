@@ -28,6 +28,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FirstPageComponent } from './first-page/first-page.component';
+import { FirebaseUsageService } from './Services/firebase-usage.service';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,7 @@ import { FirstPageComponent } from './first-page/first-page.component';
     MatInputModule,
    
   ],
-  providers: [],
+  providers: [FirebaseUsageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

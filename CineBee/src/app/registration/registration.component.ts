@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControlName } from '@angular/forms';
-import { Router } from '@angular/router';
-import {UserService} from '../user.service';
 
-// import custom validator to validate that password and confirm password fields match
 import {must} from './Val/must.validator';
+import { FirebaseUsageService } from '../Services/firebase-usage.service';
 
 @Component({
   selector: 'app-registration',
@@ -13,12 +11,31 @@ import {must} from './Val/must.validator';
 })
 export class RegistrationComponent implements OnInit {
 
-  registerForm: FormGroup;
+    registerForm: FormGroup;
     submitted = false;
     a:Number;
     b:Number;
-
-    constructor(private formBuilder: FormBuilder,private router:Router, private user:UserService) { }
+    users=[
+        {
+            fn:'Tejaswini',
+            ln:'Repala',
+            emailId:'trepala999@gmail.com',
+            pass:'cinebee143'
+        },
+        {
+            fn:'Swetha',
+            ln:'Gupta Gande',
+            emailId:'swetha12gupta@gmail.com',
+            pass:'cinebee143'
+        },
+        {
+            fn:'Vishnu',
+            ln:'Sai',
+            emailId:'vishnusai3206@gmail.com',
+            pass:'cinebee143'
+        },
+    ]
+    constructor(private formBuilder: FormBuilder,private userDetails:FirebaseUsageService) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -47,8 +64,11 @@ export class RegistrationComponent implements OnInit {
             ||this.registerForm.value.password!=this.registerForm.value.confirmPassword||this.a==-1||this.b==-1||
             this.registerForm.value.acceptTerms==false)
             return;
-        else
-            this.router.navigate(['homepage']);
+        else{
+            this.onAddUser(this.registerForm.value.firstName,this.registerForm.value.lastName,this.registerForm.value.email,this.registerForm.value.password)
+            this.onSaveUser();
+            //this.router.navigate(['homepage']);
+        }
     }
 
     onReset() {
@@ -56,4 +76,18 @@ export class RegistrationComponent implements OnInit {
         this.registerForm.reset();
     }
 
+    onAddUser(fm1,lm1,emailId1,pass1){
+        this.users.push({
+            fn:String(fm1),
+            ln:String(lm1),
+            emailId:String(emailId1),
+            pass:String(pass1)
+        })
+    }
+    onSaveUser(){
+        this.userDetails.saveUser(this.users).subscribe(
+            (response)=>console.log(response),
+            (error)=>console.log(error),
+        )
+    }
 }
