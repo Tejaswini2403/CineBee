@@ -28,6 +28,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { FirebaseUsageService } from './Services/firebase-usage.service';
+import { MovieNotFoundComponent } from './movie-not-found/movie-not-found.component'
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { FirebaseUsageService } from './Services/firebase-usage.service';
       { path:'login', component:LoginComponent },
       { path:'registration', component:RegistrationComponent },
       { path:'firstpage', component:FirstPageComponent },
+      { path:'movieNotFound', component:MovieNotFoundComponent },
       { path:'**', component:PageNotFoundComponent }
     ])
   ],

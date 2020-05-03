@@ -1,7 +1,7 @@
 <header id="head">
     <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark " [containerInside]="false">
         <!-- Navbar brand -->
-        <mdb-navbar-brand><img routerLink='' class="navbar-brand" id="logo" src="../../assets/images/logo.png"></mdb-navbar-brand>
+        <mdb-navbar-brand><img (click)="func()" class="navbar-brand" id="logo" src="../../assets/images/logo.png"></mdb-navbar-brand>
         <!-- Collapsible content -->
         <links>
         <!-- Links -->
@@ -13,7 +13,7 @@
                 <a class="nav-link waves-light" routerLink='/registration' mdbWavesEffect>Register</a>
             </li>
             <li>
-                <form class="form-inline waves-light" mdbWavesEffect>
+                <form (submit)="onSearch($event)" class="form-inline waves-light" mdbWavesEffect>
                     <div class="md-form my-0">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search">
                     </div>

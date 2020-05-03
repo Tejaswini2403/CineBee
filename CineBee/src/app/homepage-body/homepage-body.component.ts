@@ -8,8 +8,6 @@ import { APIService } from '../api.service';
 })
 export class HomepageBodyComponent implements OnInit {
   public imagesUrl;
-  public temp ='hello';
-  public img;
   constructor(private api:APIService) { 
   }
 
@@ -35,10 +33,5 @@ export class HomepageBodyComponent implements OnInit {
       '../../assets/images/moviePosters/img16.jfif',
       '../../assets/images/moviePosters/img17.jfif',
     ];
-    this.api.search('Bheeshma'),
-    this.api.apiCall().subscribe((data)=>{
-      this.temp=data['Title']
-      this.img=data['Poster']
-    })
   }
 }

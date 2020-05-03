@@ -12,8 +12,17 @@ export class APIService {
   {
     this.str=s1
   }
-  apiCall()
+  apiCall(search)
   {
-    return this.http.get(' http://www.omdbapi.com/?t='+this.str+'&apikey=8046dab1');
+    //alert("in api service  "+this.str)
+    if(search=='')
+      search=this.str;
+    return this.http.get(' http://www.omdbapi.com/?t='+search+'&apikey=8046dab1');
+  }
+  setSearch(s) {
+    this.str=s;
+  }
+  getSearch() {
+    return this.str
   }
 }

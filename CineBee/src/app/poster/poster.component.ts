@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poster',
@@ -9,12 +10,21 @@ import { APIService } from '../api.service';
 export class PosterComponent implements OnInit {
 
   public info;
-  constructor(private api:APIService) { }
+  constructor(private api:APIService, private router:Router) { }
 
   ngOnInit(): void {
-    this.api.search('Bheeshma'),
-    this.api.apiCall().subscribe((data)=>{
+    //alert("entered in poster")
+    this.funCall()
+  }
+
+  funCall() {
+    this.api.apiCall(this.api.getSearch()).subscribe((data)=>{
+      //alert("In poster  " +this.api.getSearch())
       this.info=data
+      //alert("got data  "+this.info.Title)
+      if(this.info.Title==undefined){
+        this.router.navigate(['movieNotFound'])
+      }
     })
   }
 
