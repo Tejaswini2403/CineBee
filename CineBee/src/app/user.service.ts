@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   public isUserLoggedIn;
+  email
 
   constructor() { 
   	this.isUserLoggedIn = false;
@@ -21,6 +22,14 @@ export class UserService {
 
   reSetUserLoggedIn() {
     this.isUserLoggedIn = false;
+  }
+
+  setEmail(email1) {
+    this.email=email1
+  }
+
+  getEmail() {
+    return this.email
   }
 
 }

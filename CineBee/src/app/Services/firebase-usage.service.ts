@@ -27,6 +27,8 @@ export class FirebaseUsageService {
     },
   ]
   url='https://cinebee-5f72a.firebaseio.com/users.json';
+  fn='Tejaswini'
+  ln='Repala'
   constructor(private http:HttpClient) { }
 
   saveUser(users:any[]){
@@ -43,5 +45,21 @@ export class FirebaseUsageService {
   }
   fetchData() {
     return this.http.get(this.url)
+  }
+  onFirstNameFecth(email) {
+    this.users.forEach(element => {
+      if(element.emailId==email){
+        this.fn=element.fn;
+      }
+    });
+    return this.fn;
+  }
+  onLastNameFecth(email) {
+    this.users.forEach(element => {
+      if(element.emailId==email){
+        this.ln=element.ln;
+      }
+    });
+    return this.ln;
   }
 }

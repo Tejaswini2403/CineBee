@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {must} from './Val/must.validator';
 import { FirebaseUsageService } from '../Services/firebase-usage.service';
 import { Router } from '@angular/router';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-registration',
@@ -17,7 +18,7 @@ export class RegistrationComponent implements OnInit {
     b:Number;
     users
     
-    constructor(private router:Router, private formBuilder: FormBuilder,private userDetails:FirebaseUsageService) { }
+    constructor(private router:Router, private user:UserService,private formBuilder: FormBuilder,private userDetails:FirebaseUsageService) { }
 
     ngOnInit() {
         this.registerForm = this.formBuilder.group({
@@ -50,6 +51,8 @@ export class RegistrationComponent implements OnInit {
         else{
             this.onAddUser(this.registerForm.value.firstName,this.registerForm.value.lastName,this.registerForm.value.email,this.registerForm.value.password)
             this.onSaveUser();
+            this.user.setUserLoggedIn();
+            this.user.setEmail(this.registerForm.value.email)
             this.router.navigate(['/homepage']);
         }
     }

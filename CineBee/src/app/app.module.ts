@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PosterComponent } from './poster/poster.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { RatingsComponent } from './ratings/ratings.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -37,7 +36,6 @@ import { FirebaseUsageService } from './Services/firebase-usage.service';
     FooterComponent,
     PosterComponent,
     HomePageComponent,
-    RatingsComponent,
     WishlistComponent,
     ProfileComponent,
     FeedbackComponent,
@@ -66,7 +64,6 @@ import { FirebaseUsageService } from './Services/firebase-usage.service';
       { path:'', component:FirstPageComponent },
       { path:'homepage' ,component:HomePageComponent},
       { path:'homepagebody', component:HomepageBodyComponent },
-      { path:'ratings', component:RatingsComponent },
       { path:'wishlist', component:WishlistComponent },
       { path:'profile', component:ProfileComponent },
       { path:'feedback', component:FeedbackComponent },

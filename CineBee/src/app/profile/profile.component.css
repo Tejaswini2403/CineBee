@@ -1,0 +1,18 @@
+#p1 {
+    width: 50%;
+    font-size: x-large;
+}
+#p2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#p3 {
+    align-items: center;
+}
+.accountIcon {
+    font-size: 100px;
+}
+#iconID {
+    padding-left: 260px;
+}

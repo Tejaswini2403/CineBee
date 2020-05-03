@@ -12,21 +12,23 @@ import { FirebaseUsageService } from '../Services/firebase-usage.service';
 export class LoginComponent implements OnInit {
   showErrorMessage = false;
   temp;
+  email;
   constructor(private router:Router, private user:UserService, private userDetails:FirebaseUsageService) { }
   ngOnInit() {
   }
   loginUser(e) {
     e.preventDefault();
     var username = e.target.elements[0].value;
+    this.email=e.target.elements[0].value;
     var password = e.target.elements[1].value;
     this.temp=this.userDetails.fun(username,password);
     if(this.temp) {
       this.user.setUserLoggedIn();
       this.router.navigate(['homepage']);
+      this.user.setEmail(this.email);
     }
     else{
         this.showErrorMessage = true;
     }
-
   }
 }
