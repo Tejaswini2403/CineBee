@@ -16,9 +16,14 @@ export class HeaderComponent implements OnInit {
 
   func()
   {
-    if(this.user.getUserLoggedIn)
+    if(this.user.getUserLoggedIn())
       this.router.navigate(['homepage']);
     else
       this.router.navigate(['firstpage']);
+  }
+
+  onLogout() {
+    this.user.reSetUserLoggedIn();
+    this.router.navigate(['firstpage']);
   }
 }

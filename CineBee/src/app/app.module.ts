@@ -9,9 +9,10 @@ import { RouterModule } from '@angular/router';
 import { IgxIconModule } from 'igniteui-angular';
 import { HttpClientModule } from '@angular/common/http';
 import { SlideshowModule } from 'ng-simple-slideshow';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { FooterComponent } from './footer/footer.component';
 import { AppComponent } from './app.component';
@@ -19,7 +20,6 @@ import { HeaderComponent } from './header/header.component';
 import { PosterComponent } from './poster/poster.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { RatingsComponent } from './ratings/ratings.component';
-import { ReviewsComponent } from './reviews/reviews.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -38,7 +38,6 @@ import { FirebaseUsageService } from './Services/firebase-usage.service';
     PosterComponent,
     HomePageComponent,
     RatingsComponent,
-    ReviewsComponent,
     WishlistComponent,
     ProfileComponent,
     FeedbackComponent,
@@ -61,13 +60,13 @@ import { FirebaseUsageService } from './Services/firebase-usage.service';
     HttpClientModule,
     SlideshowModule,
     FormsModule, 
+    MatFormFieldModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path:'', component:FirstPageComponent },
       { path:'homepage' ,component:HomePageComponent},
       { path:'homepagebody', component:HomepageBodyComponent },
       { path:'ratings', component:RatingsComponent },
-      { path:'reviews', component:ReviewsComponent },
       { path:'wishlist', component:WishlistComponent },
       { path:'profile', component:ProfileComponent },
       { path:'feedback', component:FeedbackComponent },

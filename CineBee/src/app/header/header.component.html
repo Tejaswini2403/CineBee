@@ -1,16 +1,13 @@
 <header id="head">
     <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark " [containerInside]="false">
         <!-- Navbar brand -->
-        <mdb-navbar-brand><img onclick="func()" class="navbar-brand" id="logo" src="../../assets/images/logo.png"></mdb-navbar-brand>
+        <mdb-navbar-brand><img (click)="func()" class="navbar-brand" id="logo" src="../../assets/images/logo.png"></mdb-navbar-brand>
         <!-- Collapsible content -->
         <links>
         <!-- Links -->
         <ul class="navbar-nav ml-auto nav-flex-icons">
             <li class="nav-item">
                 <a class="nav-link waves-light" routerLink='/ratings' mdbWavesEffect>Ratings</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link waves-light" routerLink='/reviews' mdbWavesEffect>Reviwes</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link waves-light" routerLink='/wishlist' mdbWavesEffect>WishList</a>
@@ -30,7 +27,7 @@
                 <div class="dropdown-menu dropdown-menu-right dropdown-primary">
                     <a class="dropdown-item" routerLink='/profile'>Profile</a>
                     <a class="dropdown-item" routerLink='/feedback'>Feedback</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a (click)="onLogout()" class="dropdown-item" href="#">Logout</a>
                 </div>
                 </div>
             </a>
