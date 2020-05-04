@@ -26,13 +26,35 @@ export class FirebaseUsageService {
         pass:'cinebee143'
     },
   ]
-  url='https://cinebee-5f72a.firebaseio.com/users.json';
+  ratings=[
+    {
+      title:'Bheeshma',
+      rating:'3.5'
+    }
+  ]
+  reviews=[
+    {
+      title:'Bheeshma',
+      review:'Good'
+    }
+  ]
+  urlUser='https://cinebee-5f72a.firebaseio.com/users/users1.json';
+  urlRating='https://cinebee-5f72a.firebaseio.com/Ratings/ratings1.json';
+  urlReview='https://cinebee-5f72a.firebaseio.com/Reviews/reviews1.json';
   fn='Tejaswini'
   ln='Repala'
   constructor(private http:HttpClient) { }
 
   saveUser(users:any[]){
-    return this.http.put(this.url,users)
+    return this.http.put(this.urlUser,users)
+  }
+  saveRating(ratings:any[]) {
+    //alert("in save ratings  "+ratings)
+    return this.http.put(this.urlRating,ratings)
+  }
+  saveReview(reviews:any[]) {
+    //alert("in save reviews  "+reviews)
+    return this.http.put(this.urlReview,reviews)
   }
   fun(email,password)
   {
@@ -44,7 +66,7 @@ export class FirebaseUsageService {
     return this.bool;
   }
   fetchData() {
-    return this.http.get(this.url)
+    return this.http.get(this.urlUser)
   }
   onFirstNameFecth(email) {
     this.users.forEach(element => {

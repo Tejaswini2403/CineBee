@@ -17,7 +17,7 @@
                 <div class="row" id="i3">
                     {{info.Released}}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{info.Runtime}}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{info.Language}}
                 </div>
-                <div class="row" id="i4"><span style="color: gray;">Plot</span>&nbsp;&nbsp;&nbsp;{{info.Plot}}</div>
+                <div class="row" id="i4"><span style="color: gray;">Plot</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{info.Plot}}</div>
                 <div class="row">
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Genre</div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Genre}}</div>
@@ -34,28 +34,53 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Actors</div>
                     <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Actors}}</div>
                 </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <mat-icon (click)="giveRating()" class="material-icons i">add_circle</mat-icon>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <mat-icon (click)="giveReview()" class="material-icons i">add_circle</mat-icon>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <mat-icon (click)="addToWishlist()" class="material-icons i">add_circle</mat-icon>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        Give Rating
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        Give Review
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        Add to wishlist
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container" >
-        <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="con">
-                <marquee><h1><b>Need to display reviews and ratings</b></h1></marquee>
+    <div *ngIf="showRatingsBox" id="f11">
+        <form (submit)="ratingsSubmit($event)">
+            <div class="form-group" id="f1">
+                <label>Give Rating</label>
+                <input type="text" class="form-control" />
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding:20px">
-                <div class="short-div3">
-                    <b>Add to WishList</b>
-                    <mat-icon class="material-icons i">add_circle</mat-icon>
-                </div>
-                <div class="short-div1">
-                    <b>Give Rating</b>
-                    <mat-icon class="material-icons i">add_circle</mat-icon>
-                </div>
-                <div class="short-div2">
-                    <b>Write Review</b>
-                    <mat-icon class="material-icons i">add_circle</mat-icon>
-                </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1" >Submit</button>
             </div>
-        </div>
+        </form>
+    </div>
+    <div *ngIf="showReviewsBox" id="f11">
+        <form (submit)="reviewsSubmit($event)">
+            <div class="form-group" id="f2">
+                <label>Give Review</label>
+                <input type="textarea" class="form-control" />
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1" >Submit</button>
+            </div>
+        </form>
     </div>
 </div>
