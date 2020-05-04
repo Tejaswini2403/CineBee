@@ -8,7 +8,7 @@ import {UserService} from '../user.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  data
+  
   fn:string='Tejaswi'
   ln:string='Repa'
   email:string='trepala9@gmail.com'

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { APIService } from '../api.service';
 import { Router } from '@angular/router';
 import { FirebaseUsageService } from '../Services/firebase-usage.service';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-poster',
@@ -16,7 +17,7 @@ export class PosterComponent implements OnInit {
   showRatingsBox=false
   showReviewsBox=false
 
-  constructor(private api:APIService, private router:Router,private firebase:FirebaseUsageService) { }
+  constructor(private api:APIService,private router:Router,private firebase:FirebaseUsageService,private user:UserService) { }
 
   ngOnInit(): void {
     //alert("entered in poster")
@@ -80,10 +81,16 @@ export class PosterComponent implements OnInit {
     )
   }
   giveRating() {
-    this.showRatingsBox=true
+    if(this.user.getUserLoggedIn())
+      this.showRatingsBox=true
+    else
+      alert("Please Login to your account to provide rating")
   }
   giveReview() {
-    this.showReviewsBox=true
+    if(this.user.getUserLoggedIn()) 
+      this.showReviewsBox=true
+    else
+      alert("Please Login to your account to provide review")
   }
   addToWishlist() {
 

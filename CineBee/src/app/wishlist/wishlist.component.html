@@ -1,3 +1,7 @@
 <header><app-header></app-header></header>
-<p>wishlist works!</p>
+<div fxLayout="row">
+    <ul *ngFor="let ele of Telugu | slice:0:5">
+        <li><img src={{ele.Poster}}></li>
+    </ul>
+</div>
 <footer><app-footer></app-footer></footer>

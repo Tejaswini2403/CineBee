@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { element } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,7 @@ export class FirebaseUsageService {
   ratings=[
     {
       title:'Bheeshma',
-      rating:'3.5'
+      rating:'8.5'
     }
   ]
   reviews=[
@@ -83,5 +84,15 @@ export class FirebaseUsageService {
       }
     });
     return this.ln;
+  }
+  temp
+  OnFetchRatings(Title) {
+    alert("in on fetch ratings")
+    this.ratings.forEach(element => {
+      if(element.title==Title)
+        this.temp.push(element.rating)
+    })
+    alert(this.temp)
+    return this.temp
   }
 }
