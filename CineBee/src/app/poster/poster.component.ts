@@ -11,11 +11,13 @@ import {UserService} from '../user.service';
 })
 export class PosterComponent implements OnInit {
 
-  public info;
+  info
   ratings
   reviews
   showRatingsBox=false
   showReviewsBox=false
+  temp1
+  titleInfo:string='Hello'
 
   constructor(private api:APIService,private router:Router,private firebase:FirebaseUsageService,private user:UserService) { }
 
@@ -27,14 +29,34 @@ export class PosterComponent implements OnInit {
   }
 
   funCall() {
+    //alert("first")
     this.api.apiCall(this.api.getSearch()).subscribe((data)=>{
       //alert("In poster  " +this.api.getSearch())
       this.info=data
       //alert("got data  "+this.info.Title)
+      //alert("before in funcall  "+this.temp2)
+      this.titleInfo=this.info.Title
+      //alert("after  in funcall  "+this.temp2)
       if(this.info.Title==undefined){
         this.router.navigate(['movieNotFound'])
       }
     })
+  }
+  teju
+  onFetchRatings() {
+    alert("Before temp1 is"+this.temp1+"  temp2 is "+this.titleInfo)
+    this.ratings.forEach(element => {
+      if(element.title==this.titleInfo) {
+        alert("in if  "+element.rating)
+        this.teju=element.rating
+        this.pushFun(this.temp1,this.teju)
+      }
+      alert("after if")
+    });
+    alert("After "+this.temp1)
+  }
+  pushFun(a,b) {
+    a.push(b)
   }
   ratingsSubmit(e) {
     e.preventDefault();

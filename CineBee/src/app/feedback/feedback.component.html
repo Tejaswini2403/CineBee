@@ -1,3 +1,18 @@
 <header><app-header></app-header></header>
-<p>feedback works!</p>
+<div id="feed">
+    <div class="card m-3" id="feed1">
+        <h2 class="card-header">Feedback</h2>
+        <form (submit)="onFeedbackSubmit($event)">
+          <div class="card-body" >
+            <div class="form-group ">
+              <label>Leave your feedback here</label>
+              <input type="textarea" class="form-control" />
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary mr-1" >Submit Feedback</button>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
 <footer><app-footer></app-footer></footer>

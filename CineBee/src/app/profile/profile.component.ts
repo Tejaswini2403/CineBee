@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseUsageService } from '../Services/firebase-usage.service';
-import {UserService} from '../user.service';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-profile',
@@ -9,9 +9,9 @@ import {UserService} from '../user.service';
 })
 export class ProfileComponent implements OnInit {
   
-  fn:string='Tejaswi'
-  ln:string='Repa'
-  email:string='trepala9@gmail.com'
+  fn:string='Tejaswini'
+  ln:string='Repala'
+  email:string='trepala999@gmail.com'
 
   constructor(private firebase:FirebaseUsageService,private user:UserService) { }
 
