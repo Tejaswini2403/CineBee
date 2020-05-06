@@ -83,8 +83,19 @@
             </div>
         </form>
     </div>
-    <div>
-        <button (click)="onFetchRatings()" class="btn btn-primary mr-1" >Show Ratings and Reviews</button>
+    <div id="button">
+        <button (click)="onFetchData()" class="btn btn-primary mr-1" >Show Ratings and Reviews</button>
     </div>
-    
+    <div class="row" *ngIf="show" id="rr">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="r1">
+            <div *ngFor="let ele of ratingsInfo">
+                <ol>{{ele.rate}}</ol>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="r2">
+            <div *ngFor="let ele of reviewsInfo">
+                <ol>{{ele.rev}}</ol>
+            </div>
+        </div>
+    </div>
 </div>

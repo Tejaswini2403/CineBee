@@ -16,7 +16,17 @@ export class PosterComponent implements OnInit {
   reviews
   showRatingsBox=false
   showReviewsBox=false
-  temp1
+  show=false
+  ratingsInfo=[
+    {
+      rate:7.8
+    }
+  ]
+  reviewsInfo=[
+    {
+      rev:"Good"
+    }
+  ]
   titleInfo:string='Hello'
 
   constructor(private api:APIService,private router:Router,private firebase:FirebaseUsageService,private user:UserService) { }
@@ -42,21 +52,30 @@ export class PosterComponent implements OnInit {
       }
     })
   }
-  teju
-  onFetchRatings() {
-    alert("Before temp1 is"+this.temp1+"  temp2 is "+this.titleInfo)
+  onFetchData() {
+    //alert("Before temp1 is"+this.temp1+"  temp2 is "+this.titleInfo)
     this.ratings.forEach(element => {
       if(element.title==this.titleInfo) {
-        alert("in if  "+element.rating)
-        this.teju=element.rating
-        this.pushFun(this.temp1,this.teju)
+        //alert("in if before  "+this.teju)
+        //this.teju=element.rating
+        //alert("in if after  "+this.teju)
+        //this.pushFun(this.temp1,this.teju)
+        this.ratingsInfo.push({
+          rate:element.rating
+        })
+        //alert("ha done ")
       }
-      alert("after if")
+      //alert("after if")
     });
-    alert("After "+this.temp1)
-  }
-  pushFun(a,b) {
-    a.push(b)
+    //alert("After "+this.temp1)
+    this.reviews.forEach(element => {
+      if(element.title==this.titleInfo) {
+        this.reviewsInfo.push({
+          rev:element.review
+        })
+      }
+    });
+    this.show=true
   }
   ratingsSubmit(e) {
     e.preventDefault();
@@ -65,6 +84,9 @@ export class PosterComponent implements OnInit {
     this.onAddRating(this.info.Title,rate)
     this.onSaveRating()
     this.resetRatingBox()
+    this.ratingsInfo.push({
+      rate:rate
+    })
   }
   reviewsSubmit(e) {
     e.preventDefault();
@@ -73,6 +95,9 @@ export class PosterComponent implements OnInit {
     this.onAddReview(this.info.Title,rev)
     this.onSaveReview()
     this.resetReviewBox()
+    this.reviewsInfo.push({
+      rev:rev
+    })
   }
   onAddRating(title,rating) {
     //alert("in onadd ratings "+title+"  "+rating)

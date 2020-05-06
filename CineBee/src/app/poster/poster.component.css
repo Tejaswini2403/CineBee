@@ -74,3 +74,17 @@
     width:50px ;
     font-size:50px ;
 }
+#button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+#r1 {
+    text-align: right;
+    color: white;
+}
+#r2 {
+    text-align: center;
+    color: white;
+}
