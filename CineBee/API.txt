@@ -1,4 +1,4 @@
-IMDB api key
+TMDB api key
 -------------------
 10cd0855af375ef0e13db6f232000053
 

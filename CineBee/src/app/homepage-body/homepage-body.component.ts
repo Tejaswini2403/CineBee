@@ -7,31 +7,67 @@ import { APIService } from '../api.service';
   styleUrls: ['./homepage-body.component.css']
 })
 export class HomepageBodyComponent implements OnInit {
-  public imagesUrl;
+  trending=[
+    {
+      Title:"Sye Raa Narasimha Reddy",
+      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
+    }
+  ]
   constructor(private api:APIService) { 
   }
 
   ngOnInit(): void {
-    this.imagesUrl = [
-      '../../assets/images/moviePosters/img.jfif',
-      '../../assets/images/moviePosters/img0.jfif',
-      '../../assets/images/moviePosters/img1.jfif',
-      '../../assets/images/moviePosters/img2.jfif',
-      '../../assets/images/moviePosters/img3.jfif',
-      '../../assets/images/moviePosters/img4.jfif',
-      '../../assets/images/moviePosters/img5.jfif',
-      '../../assets/images/moviePosters/img6.jfif',
-      '../../assets/images/moviePosters/img7.jfif',
-      '../../assets/images/moviePosters/img8.jfif',
-      '../../assets/images/moviePosters/img9.jfif',
-      '../../assets/images/moviePosters/img10.jfif',
-      '../../assets/images/moviePosters/img11.jfif',
-      '../../assets/images/moviePosters/img12.jfif',
-      '../../assets/images/moviePosters/img13.jfif',
-      '../../assets/images/moviePosters/img14.jfif',
-      '../../assets/images/moviePosters/img15.jfif',
-      '../../assets/images/moviePosters/img16.jfif',
-      '../../assets/images/moviePosters/img17.jfif',
-    ];
+    this.getTrending()
+  }
+
+  getTrending() {
+    for(let i=0;i<5;i++) {
+      this.api.teluguTrending().subscribe((data)=>{
+        this.trending.push({
+          Title:data['results'][i]['title'],
+          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
+        })
+      })
+    }
+    for(let i=0;i<5;i++) {
+      this.api.hindiTrending().subscribe((data)=>{
+        this.trending.push({
+          Title:data['results'][i]['title'],
+          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
+        })
+      })
+    }
+    for(let i=0;i<5;i++) {
+      this.api.englishTrending().subscribe((data)=>{
+        this.trending.push({
+          Title:data['results'][i]['title'],
+          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
+        })
+      })
+    }
+    for(let i=5;i<10;i++) {
+      this.api.teluguTrending().subscribe((data)=>{
+        this.trending.push({
+          Title:data['results'][i]['title'],
+          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
+        })
+      })
+    }
+    for(let i=5;i<10;i++) {
+      this.api.hindiTrending().subscribe((data)=>{
+        this.trending.push({
+          Title:data['results'][i]['title'],
+          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
+        })
+      })
+    }
+    for(let i=5;i<10;i++) {
+      this.api.englishTrending().subscribe((data)=>{
+        this.trending.push({
+          Title:data['results'][i]['title'],
+          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
+        })
+      })
+    }
   }
 }

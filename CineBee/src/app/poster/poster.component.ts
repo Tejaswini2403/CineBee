@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { APIService } from '../api.service';
 import { Router } from '@angular/router';
 import { FirebaseUsageService } from '../Services/firebase-usage.service';
-import {UserService} from '../user.service';
+import { UserService } from '../user.service';
+import { wishlistArray } from '../Models/WishList';
 
 @Component({
   selector: 'app-poster',
@@ -14,6 +15,7 @@ export class PosterComponent implements OnInit {
   info
   ratings
   reviews
+  wishlist:wishlistArray[]=[]
   showRatingsBox=false
   showReviewsBox=false
   show=false
@@ -140,7 +142,13 @@ export class PosterComponent implements OnInit {
       alert("Please Login to your account to provide review")
   }
   addToWishlist() {
-
+    if(this.user.getUserLoggedIn()) {
+      let x=new wishlistArray(this.titleInfo,this.info.Poster)
+      this.wishlist.push(x)
+      alert("Added to your wishlist")
+    }
+    else 
+      alert("Please Login to your account to provide review")
   }
   resetRatingBox() {
     this.showRatingsBox=false;

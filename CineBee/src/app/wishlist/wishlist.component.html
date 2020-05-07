@@ -1,7 +1,8 @@
 <header><app-header></app-header></header>
 <div fxLayout="row">
-    <ul *ngFor="let ele of Telugu | slice:0:5">
+    <ul *ngFor="let ele of wishlist ">
         <li><img src={{ele.Poster}}></li>
+        <h4>{{ele.Title}}</h4>
     </ul>
 </div>
 <footer><app-footer></app-footer></footer>
