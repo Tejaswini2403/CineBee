@@ -1,8 +1,7 @@
-   
-.fixed{
+  .fixed{
     display: grid;
-    grid-template-columns:repeat( 4,minmax(10px,1fr));
-    grid-template-rows: repeat(3,30vw);
+    grid-template-columns:repeat(4,minmax(10px,1fr));
+    grid-template-rows: repeat(1,30vw);
     grid-gap:1rem 1rem;
     background-color: black;
   }
@@ -24,6 +23,7 @@
    .container {
       text-align: center;
       padding: 10px 20px;
+      color:rgb(255, 102, 0 );
     }
     a{
         color:rgb(255, 102, 0 );

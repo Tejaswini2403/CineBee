@@ -131,5 +131,14 @@ export class FirebaseUsageService {
     });
     return this.ln;
   }
+  wish
+  OnWishlistFetch(email) {
+    this.users.forEach(element => {
+      if(element.emailId==email){
+        this.wish=element.wishlist;
+      }
+    });
+    return this.wish;
+  }
 
 }
