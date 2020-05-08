@@ -15,19 +15,15 @@ export class UserService {
   setUserLoggedIn() {
   	this.isUserLoggedIn = true;
   }
-
   getUserLoggedIn() {
   	return this.isUserLoggedIn;
   }
-
   reSetUserLoggedIn() {
     this.isUserLoggedIn = false;
   }
-
   setEmail(email1) {
     this.email=email1
   }
-
   getEmail() {
     return this.email
   }

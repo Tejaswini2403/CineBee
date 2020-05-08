@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ElementSchemaRegistry } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -11,19 +12,37 @@ export class FirebaseUsageService {
         fn:'Tejaswini',
         ln:'Repala',
         emailId:'trepala999@gmail.com',
-        pass:'cinebee143'
+        pass:'cinebee143',
+        wishlist:[
+          {
+            title:"Madha",
+            poster:"https://m.media-amazon.com/images/M/MV5BYjk0NWY0MDgtNmI2OC00OGEwLTllYjctNmU0YzRhNDM5Mjg3XkEyXkFqcGdeQXVyNzgxMjUzNzk@._V1_SX300.jpg"
+          }
+        ]
     },
     {
         fn:'Swetha',
         ln:'Gupta Gande',
         emailId:'swetha12gupta@gmail.com',
-        pass:'cinebee143'
+        pass:'cinebee143',
+        wishlist:[
+          {
+            title:"Madha",
+            poster:"https://m.media-amazon.com/images/M/MV5BYjk0NWY0MDgtNmI2OC00OGEwLTllYjctNmU0YzRhNDM5Mjg3XkEyXkFqcGdeQXVyNzgxMjUzNzk@._V1_SX300.jpg"
+          }
+        ]
     },
     {
         fn:'Vishnu',
         ln:'Sai',
         emailId:'vishnusai3206@gmail.com',
-        pass:'cinebee143'
+        pass:'cinebee143',
+        wishlist:[
+          {
+            title:"Madha",
+            poster:"https://m.media-amazon.com/images/M/MV5BYjk0NWY0MDgtNmI2OC00OGEwLTllYjctNmU0YzRhNDM5Mjg3XkEyXkFqcGdeQXVyNzgxMjUzNzk@._V1_SX300.jpg"
+          }
+        ]
     },
   ]
   ratings=[
@@ -63,16 +82,26 @@ export class FirebaseUsageService {
     return this.http.put(this.urlUser,users)
   }
   saveRating(ratings:any[]) {
-    //alert("in save ratings  "+ratings)
     return this.http.put(this.urlRating,ratings)
   }
   saveReview(reviews:any[]) {
-    //alert("in save reviews  "+reviews)
     return this.http.put(this.urlReview,reviews)
   }
   saveFeedback(feedbacks:any[]) {
-    //alert("in save feedback")
     return this.http.put(this.urlFeedback,feedbacks)
+  }
+  saveWishlist(em,ti,po) {
+    var temp
+    this.users.forEach(element => {
+      if(element.emailId==em) {
+        temp=element;
+      }
+    });
+    temp.wishlist.push({
+      title:ti,
+      poster:po
+    })
+    console.log(this.users)
   }
   fun(email,password)
   {

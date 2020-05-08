@@ -1,8 +1,10 @@
 <header><app-header></app-header></header>
-<div fxLayout="row">
-    <ul *ngFor="let ele of wishlist ">
-        <li><img src={{ele.Poster}}></li>
-        <h4>{{ele.Title}}</h4>
-    </ul>
+<div class="fixed"> 
+    <div *ngFor="let temp of telugu" class="box" >
+        <img  class="cs" src={{temp.Poster}}>
+        <div class="container">
+      <p><a href='www.google.com'>{{temp.Title}}</a></p>
+      </div>
+        </div>
 </div>
 <footer><app-footer></app-footer></footer>

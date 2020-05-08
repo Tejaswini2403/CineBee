@@ -14,7 +14,6 @@ export class APIService {
   }
   apiCall(search)
   {
-    //alert("in api service  "+this.str)
     if(search=='')
       search=this.str;
     return this.http.get(' http://www.omdbapi.com/?t='+search+'&apikey=8046dab1');
@@ -25,13 +24,13 @@ export class APIService {
   getSearch() {
     return this.str
   }
-  teluguTrending() {
-    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=10cd0855af375ef0e13db6f232000053&with_original_language=te&sort_by=release_date.dsc&year=2020');
+  trending(lang) {
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=10cd0855af375ef0e13db6f232000053&with_original_language='+lang+'&sort_by=release_date.dsc&year=2020');
   }
-  hindiTrending() {
-    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=10cd0855af375ef0e13db6f232000053&with_original_language=hi&sort_by=release_date.dsc&year=2020');
+  language(lang) {
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=10cd0855af375ef0e13db6f232000053&with_original_language='+lang);
   }
-  englishTrending() {
-    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=10cd0855af375ef0e13db6f232000053&with_original_language=en&sort_by=release_date.dsc&year=2020');
+  genreAndLanguage(ge,la) {
+    return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=10cd0855af375ef0e13db6f232000053&with_original_language='+la+'&with_genres='+ge)
   }
 }

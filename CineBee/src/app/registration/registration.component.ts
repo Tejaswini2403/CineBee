@@ -67,7 +67,11 @@ export class RegistrationComponent implements OnInit {
             fn:fm1,
             ln:lm1,
             emailId:emailId1,
-            pass:pass1
+            pass:pass1,
+            wishlist:{
+                title:"Madha",
+                poster:"https://m.media-amazon.com/images/M/MV5BYjk0NWY0MDgtNmI2OC00OGEwLTllYjctNmU0YzRhNDM5Mjg3XkEyXkFqcGdeQXVyNzgxMjUzNzk@._V1_SX300.jpg"
+            }
         })
     }
     onSaveUser(){
