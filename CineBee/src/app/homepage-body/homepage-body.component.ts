@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { APIService } from '../api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage-body',
@@ -79,7 +80,7 @@ export class HomepageBodyComponent implements OnInit {
       Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
     }
   ]
-  constructor(private api:APIService) { 
+  constructor(private router:Router, private api:APIService) { 
   }
 
   ngOnInit(): void {
@@ -312,6 +313,10 @@ export class HomepageBodyComponent implements OnInit {
         })
       })
     }
+  }
+  onPosterClick(tit) {
+    this.api.setSearch(tit);
+    this.router.navigate(['poster']);
   }
 
 }
