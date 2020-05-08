@@ -2,3 +2,27 @@
     height: 50px;
     width: 50px;
 }
+#slideshow {
+    height: 350px;
+    width: 100%;
+    background-color: black;
+}
+#img1 {
+    height: 350px;
+    width: 75%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p {
+    color:white;
+    font-size: x-large;
+    font-weight: 550;
+}
+#img2 {
+    height:150px;
+    width: 150px;
+}
+.my-1 {
+    background-color: black;
+}
