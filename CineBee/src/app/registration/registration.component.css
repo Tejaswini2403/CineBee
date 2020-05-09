@@ -1,9 +1,13 @@
 #id1 {
     height: 80%;
-    width: 50%;
+    width: 90%;
 }
 #id2 {
     display:flex;
     align-items:center;
     justify-content:center;
+    background-image: url(../../assets/images/bg9.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-right: 700px;
 }

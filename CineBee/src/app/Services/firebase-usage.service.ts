@@ -45,24 +45,11 @@ export class FirebaseUsageService {
         ]
     },
   ]
-  ratings=[
+  raterev=[
     {
-      title:'Bheeshma',
-      rating:'8.5'
-    },
-    {
-      title:'Bheeshma',
-      rating:'9.2'
-    },
-    {
-      title:'Bheeshma',
-      rating:'6.5'
-    }
-  ]
-  reviews=[
-    {
-      title:'Bheeshma',
-      review:'Nice feel good movie... I loved it'
+      title:"Bheeshma",
+      rate:6.8,
+      rev:"It is feel good movie"
     }
   ]
   feedbacks=[
@@ -71,8 +58,7 @@ export class FirebaseUsageService {
     }
   ]
   urlUser='https://cinebee-5f72a.firebaseio.com/users/users1.json';
-  urlRating='https://cinebee-5f72a.firebaseio.com/Ratings/ratings1.json';
-  urlReview='https://cinebee-5f72a.firebaseio.com/Reviews/reviews1.json';
+  urlRateRev='https://cinebee-5f72a.firebaseio.com/RatingsReviews/raterev1.json'
   urlFeedback='https://cinebee-5f72a.firebaseio.com/Feedbacks/feedbacks1.json';
   fn='Tejaswini'
   ln='Repala'
@@ -81,11 +67,8 @@ export class FirebaseUsageService {
   saveUser(users:any[]){
     return this.http.put(this.urlUser,users)
   }
-  saveRating(ratings:any[]) {
-    return this.http.put(this.urlRating,ratings)
-  }
-  saveReview(reviews:any[]) {
-    return this.http.put(this.urlReview,reviews)
+  saveRateRev(raterev:any[]) {
+    return this.http.put(this.urlRateRev,raterev.slice(1))
   }
   saveFeedback(feedbacks:any[]) {
     return this.http.put(this.urlFeedback,feedbacks)

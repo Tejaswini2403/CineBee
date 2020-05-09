@@ -11,8 +11,16 @@ import { FirebaseUsageService } from '../Services/firebase-usage.service';
 
 export class LoginComponent implements OnInit {
   showErrorMessage = false;
-  temp;
-  email;
+  temp
+  email
+  images=[
+    '../../assets/images/loginImg/img1.jpg',
+    '../../assets/images/loginImg/img2.jpg',
+    '../../assets/images/loginImg/img3.jpg',
+    '../../assets/images/loginImg/img4.jpg',
+    '../../assets/images/loginImg/img5.jpg'
+  ]
+
   constructor(private router:Router, private user:UserService, private userDetails:FirebaseUsageService) { }
   ngOnInit() {
   }

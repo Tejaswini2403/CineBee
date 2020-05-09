@@ -1,27 +1,65 @@
-﻿<html>
-  <body id="in2">
-    <div class="card m-3" id="in1">
-      <h5 class="card-header">Login</h5>
-      <form (submit)="loginUser($event)">
-        <div class="card-body" >
-          <div class="form-group ">
-            <label>Email</label>
-            <input type="text" class="form-control" />
+﻿<!--<html>
+  <body>
+    <div id="in2">
+      <div class="card m-3" id="in1">
+        <h5 class="card-header">Login</h5>
+        <form (submit)="loginUser($event)">
+          <div class="card-body" >
+            <div class="form-group ">
+              <label>Email</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group ">
+              <label>Password</label>
+              <input type="password" class="form-control" />
+            </div>
+            <div *ngIf="showErrorMessage" id="errorMessage">
+              <p>Invalid Email or Password</p>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary mr-1" >Login</button>
+              &nbsp;&nbsp;&nbsp;
+              <a routerLink='/registration'>Create an account?</a>
+            </div>
           </div>
-          <div class="form-group ">
-            <label>Password</label>
-            <input type="password" class="form-control" />
-          </div>
-          <div *ngIf="showErrorMessage" id="errorMessage">
-            <p>Invalid Email or Password</p>
-          </div>
-          <div class="text-center">
-            <button class="btn btn-primary mr-1" >Login</button>
-            &nbsp;&nbsp;&nbsp;
-            <a routerLink='/registration'>Create an account?</a>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </body>
-</html>
+</html>-->
+<div class="row" id="x1">
+  <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+    <mdb-carousel [isControls]="false" [animation]="'slide'" [interval]="'1000'">
+      <mdb-carousel-item *ngFor="let temp of images">
+        <img id="imgS" src={{temp}}>
+      </mdb-carousel-item>
+    </mdb-carousel>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    <div id="in2">
+      <div class="card m-3" id="in1">
+        <h5 class="card-header">Login</h5>
+        <form (submit)="loginUser($event)">
+          <div class="card-body" >
+            <div class="form-group ">
+              <label>Email</label>
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group ">
+              <label>Password</label>
+              <input type="password" class="form-control" />
+            </div>
+            <div *ngIf="showErrorMessage" id="errorMessage">
+              <p>Invalid Email or Password</p>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-primary mr-1" >Login</button>
+              &nbsp;&nbsp;&nbsp;
+              <a routerLink='/registration'>Create an account?</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

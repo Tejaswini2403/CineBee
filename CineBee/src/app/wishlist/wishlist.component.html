@@ -1,10 +1,13 @@
 <header><app-header></app-header></header>
-<div class="fixed"> 
-    <div *ngFor="let temp of wishlist" class="box" >
-        <img  class="cs" src={{temp.poster}}>
-        <div class="container">
-      <p><a>{{temp.title}}</a></p>
-      </div>
+  <div class="fixed"> 
+    <div *ngIf="wishlist.slice(1)?.length==0" id="text">
+      WishList is Empty
     </div>
-</div>
+      <div *ngFor="let temp of wishlist.slice(1)" class="box" >
+          <img  (click)="onPoster(temp.title)" class="cs" src={{temp.poster}}>
+          <div class="container">
+        <p><a>{{temp.title}}</a></p>
+        </div>
+      </div>
+  </div>
 <footer><app-footer></app-footer></footer>

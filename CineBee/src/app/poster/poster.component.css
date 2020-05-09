@@ -26,16 +26,18 @@
     color: gray;
     margin-right: 17px;
     font-size: 75%;
+    font-weight: 500;
 }
 #i2 {
     font-weight: 450;
     font-size: 200%;
+    font-weight: 500;
 }
 #i3 {
     color: gray;
     padding-left: 15px;
     padding-bottom: 5px;
-    
+    font-weight: 500;
 }
 #i4 {
     padding-left: 17px;
@@ -48,6 +50,7 @@
     text-align: left;
     padding-bottom: 5px;
     color: gray;
+    font-weight: 500;
 }
 #i6 {
     text-align: left;
@@ -57,11 +60,13 @@
     color: gray;
     width: 200px;
     align-items: center;
+    font-weight: 500;
 }
 #f2 {
     color: gray;
     width: 400px;
     align-items: center;
+    font-weight: 500;
 }
 #f11 {
     display: flex;
@@ -87,4 +92,36 @@
 #r2 {
     text-align: center;
     color: white;
+}
+#x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#rr {
+    align-items: center;
+}
+#disp {
+    height: 500px;
+    width: 40%;
+    background-image: url(../../assets/images/Clap.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: green;
+    padding-top: 120px;
+}
+#disp1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#d1 {
+    font-weight: 500;
+    color: black;
+    font-size: x-large;
+}
+#d2 {
+    font-weight: 500;
+    color: black;
+    font-size: x-large;
 }

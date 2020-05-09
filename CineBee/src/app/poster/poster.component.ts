@@ -12,19 +12,13 @@ import { UserService } from '../user.service';
 export class PosterComponent implements OnInit {
 
   info
-  ratings
-  reviews
-  showRatingsBox=false
-  showReviewsBox=false
+  raterev
+  showBox=false
   show=false
-  ratingsInfo=[
+  RatingsReviews=[
     {
-      rate:7.8
-    }
-  ]
-  reviewsInfo=[
-    {
-      rev:"Good"
+      rate:6.8,
+      rev:"It is feel good movie"
     }
   ]
   titleInfo:string='Hello'
@@ -33,8 +27,7 @@ export class PosterComponent implements OnInit {
 
   ngOnInit(): void {
     this.funCall()
-    this.ratings=this.firebase.ratings
-    this.reviews=this.firebase.reviews
+    this.raterev=this.firebase.raterev
   }
 
   funCall() {
@@ -47,77 +40,50 @@ export class PosterComponent implements OnInit {
     })
   }
   onFetchData() {
-    this.ratings.forEach(element => {
+    this.raterev.slice(1).forEach(element => {
       if(element.title==this.titleInfo) {
-        this.ratingsInfo.push({
-          rate:element.rating
-        })
-      }
-    });
-    this.reviews.forEach(element => {
-      if(element.title==this.titleInfo) {
-        this.reviewsInfo.push({
-          rev:element.review
+        this.RatingsReviews.push({
+          rate:element.rate,
+          rev:element.rev
         })
       }
     });
     this.show=true
   }
-  ratingsSubmit(e) {
+  OnSubmit(e) {
     e.preventDefault();
     var rate = e.target.elements[0].value;
-    this.onAddRating(this.info.Title,rate)
-    this.onSaveRating()
-    this.resetRatingBox()
-    this.ratingsInfo.push({
-      rate:rate
-    })
+    var rev = e.target.elements[1].value;
+    if(rate==""||rev=="")
+      alert("Please provide both Rating and Review")
+    else {
+      this.onAdd(this.info.Title,rate,rev)
+      this.onSave()
+      this.RatingsReviews.push({
+        rate:rate,
+        rev:rev
+      })
+      this.resetBox()
+    }
   }
-  reviewsSubmit(e) {
-    e.preventDefault();
-    var rev = e.target.elements[0].value;
-    this.onAddReview(this.info.Title,rev)
-    this.onSaveReview()
-    this.resetReviewBox()
-    this.reviewsInfo.push({
-      rev:rev
-    })
-  }
-  onAddRating(title,rating) {
-    this.ratings.push({
+  onAdd(title,rating,review) {
+    this.raterev.push({
       title:title,
-      rating:rating
-    })
-  }
-  onAddReview(title,review) {
-    this.reviews.push({
-      title:title,
+      rating:rating,
       review:review
     })
   }
-  onSaveRating() {
-    this.firebase.saveRating(this.ratings).subscribe(
+  onSave() {
+    this.firebase.saveRateRev(this.raterev).subscribe(
       (response)=>console.log(response),
       (error)=>console.log(error),
     )
   }
-  onSaveReview() {
-    this.firebase.saveReview(this.reviews).subscribe(
-      (response)=>console.log(response),
-      (error)=>console.log(error),
-    )
-  }
-  giveRating() {
+  give() {
     if(this.user.getUserLoggedIn())
-      this.showRatingsBox=true
+      this.showBox=true
     else
-      alert("Please Login to your account to provide rating")
-  }
-  giveReview() {
-    if(this.user.getUserLoggedIn()) 
-      this.showReviewsBox=true
-    else
-      alert("Please Login to your account to provide review")
+      alert("Please Login to your account to provide rating and review")
   }
   addToWishlist() {
     if(this.user.getUserLoggedIn()) {
@@ -126,13 +92,10 @@ export class PosterComponent implements OnInit {
       alert("Added to your wishlist")
     }
     else 
-      alert("Please Login to your account to provide review")
+      alert("Please Login to your account to add to your wishlist")
   }
-  resetRatingBox() {
-    this.showRatingsBox=false;
-  }
-  resetReviewBox() {
-    this.showReviewsBox=false;
+  resetBox() {
+    this.showBox=false;
   }
 
 }

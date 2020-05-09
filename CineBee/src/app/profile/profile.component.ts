@@ -21,5 +21,4 @@ export class ProfileComponent implements OnInit {
     this.ln=this.firebase.onLastNameFecth(this.email);
   }
 
-
 }

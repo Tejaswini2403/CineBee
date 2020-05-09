@@ -1,11 +1,15 @@
 #p1 {
-    width: 50%;
+    width: 42%;
     font-size: x-large;
 }
 #p2 {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url(../../assets/images/profileBG.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 85%;
 }
 #p3 {
     align-items: center;
@@ -15,5 +19,5 @@
     color: black;
 }
 #iconID {
-    padding-left: 260px;
+    padding-left: 171px;
 }
