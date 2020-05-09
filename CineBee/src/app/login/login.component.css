@@ -5,12 +5,10 @@
 }
 #in1 {
     height: 53%;
-	width: 100%;
+	width: 50%;
 }
 #in2 {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-	transform: translate(-50%, -50%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }

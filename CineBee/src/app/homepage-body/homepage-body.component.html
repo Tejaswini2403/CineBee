@@ -1,20 +1,145 @@
 <body style="background-color: black;">
     <br/>
-    <mdb-carousel  class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'" [interval]="'2000'">
-        <mdb-carousel-item *ngFor="let temp of trending.slice(1)" id="slideshow">
-            <div class="view w-100">
-                <img id="img1" (click)="onPosterClick(temp.Title)" src={{temp.Poster}} >
-                <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+    <mdb-carousel  class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'" [interval]="'1500'">
+        <mdb-carousel-item *ngFor="let temp of slideshow" id="slideshow">
+            <img id="img1" (click)="onPosterClick(temp.Title)" src={{temp.Poster}} >
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Trending Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of trendingArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
             </div>
-            <div class="carousel-caption">
-                <h3 class="h3-responsive">{{temp.Title}}</h3>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Movies in English</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of englishArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
             </div>
         </mdb-carousel-item>
     </mdb-carousel>
     <br/>
     <p>Movies in Telugu</p>
     <mdb-carousel [interval]="'0'">
-        <mdb-carousel-item *ngFor="let item of slides; let i = index">
+        <mdb-carousel-item *ngFor="let item of teluguArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Movies in Hindi</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of hindiArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Movies in Malyalam</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of malyalamArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Movies in Tamil</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of tamilArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Movies in Kannada</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of kannadaArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/><p>Action Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of actionArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Romantic Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of romanceArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Thriller Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of thrillerArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Drama Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of dramaArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Comedy Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of comedyArray; let i = index">
+            <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
+            <mdb-card class="my-1">
+                <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
+            </mdb-card>
+            </div>
+        </mdb-carousel-item>
+    </mdb-carousel>
+    <br/>
+    <p>Crime Movies</p>
+    <mdb-carousel [interval]="'0'">
+        <mdb-carousel-item *ngFor="let item of crimeArray; let i = index">
             <div class="col-md-2" *ngFor="let card of item; let cardIndex = index">
             <mdb-card class="my-1">
                 <mdb-card-img [src]="card.Poster" (click)="onPosterClick(card.Title)" id="img2"></mdb-card-img>
