@@ -30,8 +30,9 @@
         text-decoration: none;
     }
     #text {
+      background-color: black;
       color: white;
-      font-weight: 900;
-      font-size:30px;
+      font-size:20px;
+      letter-spacing: 2px;
       padding-left: 15px;
     }

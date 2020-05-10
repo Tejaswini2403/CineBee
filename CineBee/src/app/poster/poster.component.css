@@ -107,13 +107,17 @@
     background-image: url(../../assets/images/Clap.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: green;
     padding-top: 120px;
+    font-family:Oswald;
 }
 #disp1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family:Oswald;
+}
+#disp2 {
+    height: 353px;
 }
 #d1 {
     font-weight: 500;

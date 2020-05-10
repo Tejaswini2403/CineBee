@@ -1,94 +1,104 @@
-<div class="movie_details">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="poster">
-                <img src={{info.Poster}}>
+<html>
+    <head>
+        <link href='https://fonts.googleapis.com/css?family=Oswald ' rel='stylesheet'>
+    </head>
+    <body>
+        <div class="movie_details">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" id="poster">
+                        <img src={{info.Poster}}>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="details">
+                        <div class="row">
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="title">
+                                {{info.Title}}
+                            </div>
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="imdbrating">
+                                <div id="i1">IMDb Rating</div>
+                                <b><div id="i2">{{info.imdbRating}}/10</div></b>
+                            </div>
+                        </div>
+                        <div class="row" id="i3">
+                            {{info.Released}}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{info.Runtime}}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{info.Language}}
+                        </div>
+                        <div class="row" id="i4"><span style="color: gray;font-weight: 500;">Plot</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{info.Plot}}</div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Genre</div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Genre}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Director</div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Director}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Writer</div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Writer}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Actors</div>
+                            <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Actors}}</div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
+                                <mat-icon (click)="give()" class="material-icons i">add_circle</mat-icon>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
+                                <mat-icon (click)="addToWishlist()" class="material-icons i">add_circle</mat-icon>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
+                                Give Rating & Review
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
+                                Add to wishlist
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" id="details">
-                <div class="row">
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" id="title">
-                        {{info.Title}}
+            <div *ngIf="showBox" id="f11">
+                <form (submit)="OnSubmit($event)">
+                    <div class="form-row">
+                        <div class="form-group col-2">
+                            <label><span style="color: gray;font-weight: 500;">Rating</span></label>
+                            <input type="text"  id="rr" class="form-control" />
+                        </div>
+                        <div class="form-group col-10">
+                            <label><span style="color: gray;font-weight: 500;">Review</span></label>
+                            <input type="text" id="rr" class="form-control" />
+                        </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" id="imdbrating">
-                        <div id="i1">IMDb Rating</div>
-                        <b><div id="i2">{{info.imdbRating}}/10</div></b>
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-1" >Submit</button>
                     </div>
-                </div>
-                <div class="row" id="i3">
-                    {{info.Released}}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{info.Runtime}}&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;{{info.Language}}
-                </div>
-                <div class="row" id="i4"><span style="color: gray;font-weight: 500;">Plot</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{info.Plot}}</div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Genre</div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Genre}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Director</div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Director}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Writer</div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Writer}}</div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" id="i5">Actors</div>
-                    <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10" id="i6">{{info.Actors}}</div>
-                </div>
-                <br/>
-                <br/>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
-                        <mat-icon (click)="give()" class="material-icons i">add_circle</mat-icon>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
-                        <mat-icon (click)="addToWishlist()" class="material-icons i">add_circle</mat-icon>
-                    </div>
-                </div>
-                <br/>
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
-                        Give Rating & Review
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" id="x">
-                        Add to wishlist
-                    </div>
-                </div>
+                </form>
             </div>
+            <br/>
+            <br/>
+            <!--<div>
+                <button (click)="onFetchData()" class="btn btn-primary mr-1" >Submit</button>
+            </div>-->
+            <div id="disp1">
+                <mdb-carousel [animation]="'slide'" [interval]="'4000'" id="disp">
+                    <mdb-carousel-item *ngFor="let card of RatingsReviews" id="disp2">   
+                        <mdb-card-body>
+                            <mdb-card-title>
+                                <div class="row" id="d1" >Rating: {{card.rate}}/10</div>
+                            </mdb-card-title>
+                            <hr style="height:2px;border-width:0;color:black;background-color:black">
+                            <div class="row" id="d2" ><p>Review:</p></div>
+                            <div class="row" id="d2" ><p>{{card.rev}}</p></div>
+                          </mdb-card-body>
+                    </mdb-carousel-item>
+                </mdb-carousel>
+            </div>
+            <br/>
+            <br/>
         </div>
-    </div>
-    <div *ngIf="showBox" id="f11">
-        <form (submit)="OnSubmit($event)">
-            <div class="form-row">
-                <div class="form-group col-2">
-                    <label><span style="color: gray;font-weight: 500;">Rating</span></label>
-                    <input type="text"  id="rr" class="form-control" />
-                </div>
-                <div class="form-group col-10">
-                    <label><span style="color: gray;font-weight: 500;">Review</span></label>
-                    <input type="text" id="rr" class="form-control" />
-                </div>
-            </div>
-            <div class="text-center">
-                <button class="btn btn-primary mr-1" >Submit</button>
-            </div>
-        </form>
-    </div>
-    <br/>
-    <br/>
-    <div id="disp1">
-        <mdb-carousel [animation]="'slide'" [interval]="'4000'" id="disp">
-            <mdb-carousel-item *ngFor="let card of RatingsReviews">   
-                <mdb-card-body>
-                    <mdb-card-title>
-                        <div class="row" id="d1" >Rating: {{card.rate}}/10</div>
-                    </mdb-card-title>
-                    <hr>
-                    <div class="row" id="d2" ><p>Review:</p></div>
-                    <div class="row" id="d2" ><p>{{card.rev}}</p></div>
-                  </mdb-card-body>
-            </mdb-carousel-item>
-        </mdb-carousel>
-    </div>
-    <br/>
-    <br/>
-</div>
+    </body>
+</html>

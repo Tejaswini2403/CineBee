@@ -1,5 +1,4 @@
 <body style="background-color: black;">
-    <br/>
     <mdb-carousel  class="carousel slide carousel-fade" [type]="'carousel-thumbnails'" [animation]="'fade'" [interval]="'1500'">
         <mdb-carousel-item *ngFor="let temp of slideshow" id="slideshow">
             <img id="img1" (click)="onPosterClick(temp.Title)" src={{temp.Poster}} >

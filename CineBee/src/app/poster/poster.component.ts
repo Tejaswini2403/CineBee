@@ -15,12 +15,7 @@ export class PosterComponent implements OnInit {
   raterev
   showBox=false
   show=false
-  RatingsReviews=[
-    {
-      rate:6.8,
-      rev:"It is feel good movie"
-    }
-  ]
+  RatingsReviews
   titleInfo:string='Hello'
 
   constructor(private api:APIService,private router:Router,private firebase:FirebaseUsageService,private user:UserService) { }
@@ -28,30 +23,26 @@ export class PosterComponent implements OnInit {
   ngOnInit(): void {
     this.funCall()
     this.raterev=this.firebase.raterev
-    this.onFetchData()
   }
 
   funCall() {
+    //alert("in funcall")
     this.api.apiCall(this.api.getSearch()).subscribe((data)=>{
       this.info=data
       this.titleInfo=this.info.Title
+      //alert(this.titleInfo+"  hd")
+      this.onFetchData()
       if(this.info.Title==undefined){
         this.router.navigate(['movieNotFound'])
       }
     })
   }
   onFetchData() {
-    alert("entered")
-    this.firebase.raterev.slice(1).forEach(element => {
-      if(element.title==this.titleInfo) {
-        this.RatingsReviews.push({
-          rate:element.rate,
-          rev:element.rev
-        })
-      }
-    });
-    console.log(this.RatingsReviews)
-    this.show=true
+    //alert("entered onfetchdata  "+"  "+this.titleInfo)
+    //const x=await this.funCall()
+    //alert("entered1111 onfetchdata  "+this.RatingsReviews+"  "+this.titleInfo)
+    this.RatingsReviews=this.firebase.fetchRateRev(this.titleInfo)
+    //alert("leaving onfetchdata  "+this.titleInfo+"  "+this.RatingsReviews)
   }
   OnSubmit(e) {
     e.preventDefault();
@@ -62,18 +53,15 @@ export class PosterComponent implements OnInit {
     else {
       this.onAdd(this.info.Title,rate,rev)
       this.onSave()
-      this.RatingsReviews.push({
-        rate:rate,
-        rev:rev
-      })
       this.resetBox()
     }
+    this.onFetchData()
   }
   onAdd(title,rating,review) {
     this.raterev.push({
       title:title,
-      rating:rating,
-      review:review
+      rate:rating,
+      rev:review
     })
   }
   onSave() {
@@ -85,8 +73,10 @@ export class PosterComponent implements OnInit {
   give() {
     if(this.user.getUserLoggedIn())
       this.showBox=true
-    else
+    else {
       alert("Please Login to your account to provide rating and review")
+      this.router.navigate(['login'])
+    }
   }
   addToWishlist() {
     if(this.user.getUserLoggedIn()) {
@@ -94,8 +84,10 @@ export class PosterComponent implements OnInit {
       this.firebase.saveWishlist(email,this.info.Title,this.info.Poster)
       alert("Added to your wishlist")
     }
-    else 
+    else {
       alert("Please Login to your account to add to your wishlist")
+      this.router.navigate(['login'])
+    }
   }
   resetBox() {
     this.showBox=false;
