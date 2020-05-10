@@ -1,8 +1,17 @@
+#head {
+    background-color:#263228;
+}
+#logo {
+    height: 60px;
+    width: 100px;
+}
 #id1 {
     height: 80%;
     width: 90%;
 }
 #id2 {
+    height: 87%;
+    width: 100%;
     display:flex;
     align-items:center;
     justify-content:center;

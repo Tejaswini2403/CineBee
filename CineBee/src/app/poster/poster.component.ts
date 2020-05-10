@@ -28,6 +28,7 @@ export class PosterComponent implements OnInit {
   ngOnInit(): void {
     this.funCall()
     this.raterev=this.firebase.raterev
+    this.onFetchData()
   }
 
   funCall() {
@@ -40,7 +41,8 @@ export class PosterComponent implements OnInit {
     })
   }
   onFetchData() {
-    this.raterev.slice(1).forEach(element => {
+    alert("entered")
+    this.firebase.raterev.slice(1).forEach(element => {
       if(element.title==this.titleInfo) {
         this.RatingsReviews.push({
           rate:element.rate,
@@ -48,6 +50,7 @@ export class PosterComponent implements OnInit {
         })
       }
     });
+    console.log(this.RatingsReviews)
     this.show=true
   }
   OnSubmit(e) {

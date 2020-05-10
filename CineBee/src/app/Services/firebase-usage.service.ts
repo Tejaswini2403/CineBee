@@ -48,8 +48,8 @@ export class FirebaseUsageService {
   raterev=[
     {
       title:"Bheeshma",
-      rate:6.8,
-      rev:"It is feel good movie"
+      rate:7.6,
+      rev:"Good movie"
     }
   ]
   feedbacks=[
