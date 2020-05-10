@@ -440,19 +440,19 @@ slideshow=[
   {
 
     "Title": "Ala Vaikunthapurramuloo",
-    "Poster": "../../assets/images/trendingMovies/alaVaikunthapurramuloo.jpg",
+    "Poster": "../../assets/images/trendingMovies/alaVaikuntapurramlo.jpg",
 },
 {
-    "Title": "Chhapaak",
-    "Poster": "../../assets/images/trendingMovies/chhapaak.jpg",
+    "Title": "Baaghi 2",
+    "Poster": "../../assets/images/trendingMovies/baaghi.jpg",
 },
 {
   "Title": "Love Moctail",
   "Poster": "../../assets/images/trendingMovies/loveMoctail.webp",
 },
 {
-  "Title": "Frozen II",
-  "Poster": "../../assets/images/trendingMovies/frozen2.jpg",
+  "Title": "Joker",
+  "Poster": "../../assets/images/loginImg/img3.jpg",
 },
 {
    "Title": "Sarileru Neekevvaru",
@@ -480,7 +480,7 @@ Action=[
     "Title": "Baaghi 3",
     "Poster": "https://m.media-amazon.com/images/M/MV5BZTAxNWE2MDItZWFlNS00MWM1LWI1ZjQtN2I5NDBhNWYzZjNhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
    
-},
+  },
   {
     "Title": "Aswathama",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNWE3ZTc1ZjItNWIyMy00Njk4LWJkNjQtNTgzMjg3NmIzNzRlXkEyXkFqcGdeQXVyNjU0Nzg1NzY@._V1_SX300.jpg",
