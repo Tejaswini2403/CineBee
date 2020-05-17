@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
     this.email=e.target.elements[0].value;
     var password = e.target.elements[1].value;
     this.temp=this.userDetails.fun(username,password);
+    //alert("temp is  "+this.temp)
+    //alert("user details are  "+this.userDetails.users)
+    //console.log(this.userDetails.users)
     if(this.temp) {
       this.user.setUserLoggedIn();
       this.router.navigate(['homepage']);

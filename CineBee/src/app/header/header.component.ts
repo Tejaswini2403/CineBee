@@ -32,4 +32,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['poster']);
     //alert("Here");
   }
+  onProfileClick() {
+    this.router.navigate(['profile']);
+  }
 }
