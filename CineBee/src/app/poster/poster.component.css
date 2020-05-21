@@ -100,6 +100,7 @@
 }
 #rr {
     align-items: center;
+    width: 300px;
 }
 #disp {
     height: 500px;
@@ -128,4 +129,35 @@
     font-weight: 500;
     color: black;
     font-size: x-large;
+}
+
+#e1 {
+    color:gray
+}
+#e2 {
+    color:gray
+}
+#e3 {
+    color:gray
+}
+#e4 {
+    color:gray
+}
+#e5 {
+    color:gray
+}
+#e1:hover{
+    color: yellow;
+}
+#e2:hover{
+    color: yellow;
+}
+#e3:hover{
+    color: yellow;
+}
+#e4:hover{
+    color: yellow;
+}
+#e5:hover {
+    color:yellow;
 }

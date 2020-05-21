@@ -49,7 +49,7 @@ export class FirebaseUsageService {
   raterev=[
     {
       title:"Bheeshma",
-      rate:7.6,
+      rate:3,
       rev:"Good movie"
     }
   ]
@@ -135,23 +135,23 @@ export class FirebaseUsageService {
   fetchRateRev(tit) {
     var rr=[
       {
-        rate:9.2,
+        rate:5,
         rev:"This movie is strong, good script, great casting, excellent acting, and over the top directing. It is hard to fine a movie done this well.Even if the viewer does not like this type of movies, he or she will watch the entire film, the audiences is glued to what will happen next as the film progresses. Its about, family, loyalty, greed, relationships, and real life."
       },
       {
-        rate:8.6,
+        rate:4,
         rev:"This film is pretty much the perfection of the craft. Every single aspect of it is outstanding. There are so many iconic lines and moments throughout the movie that have been replicated and entrenched in culture over the years. There really isn't too much else to say. This is truly the peak of filmmaking."
       },
       {
-        rate:3.5,
+        rate:2,
         rev:"Since the trailer seemed to be good , but the movie ,not worth watching"
       },
       {
-        rate:7.2,
+        rate:3,
         rev:"This movie was fresh and enjoyable comedy. Everything was straight forward. It is worth watching because it is a unique movie and there is nothing to do but laugh the whole time."
       },
       {
-        rate:2.5,
+        rate:2,
         rev:"There are few good moments, other than that it's just a big mental fest"
       }
       

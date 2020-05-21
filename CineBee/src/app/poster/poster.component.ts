@@ -13,8 +13,9 @@ export class PosterComponent implements OnInit {
 
   info
   raterev
-  showBox=false
-  show=false
+  givenRate=""
+  showReview=false
+  showRating=false
   RatingsReviews
   titleInfo:string='Hello'
 
@@ -46,14 +47,14 @@ export class PosterComponent implements OnInit {
   }
   OnSubmit(e) {
     e.preventDefault();
-    var rate = e.target.elements[0].value;
-    var rev = e.target.elements[1].value;
+    var rate = this.givenRate;
+    var rev = e.target.elements[0].value;
     if(rate==""||rev=="")
       alert("Please provide both Rating and Review")
     else {
       this.onAdd(this.info.Title,rate,rev)
       this.onSave()
-      this.resetBox()
+      this.showReview=false;
     }
     this.onFetchData()
   }
@@ -71,12 +72,18 @@ export class PosterComponent implements OnInit {
     )
   }
   give() {
-    if(this.user.getUserLoggedIn())
-      this.showBox=true
+    if(this.user.getUserLoggedIn()) {
+      this.showReview=true
+      this.showRating=true
+    }
     else {
       alert("Please Login to your account to provide rating and review")
       this.router.navigate(['login'])
     }
+  }
+  onGiveRating(x) {
+    this.showRating=false;
+    this.givenRate=x
   }
   addToWishlist() {
     if(this.user.getUserLoggedIn()) {
@@ -88,9 +95,6 @@ export class PosterComponent implements OnInit {
       alert("Please Login to your account to add to your wishlist")
       this.router.navigate(['login'])
     }
-  }
-  resetBox() {
-    this.showBox=false;
   }
 
 }
