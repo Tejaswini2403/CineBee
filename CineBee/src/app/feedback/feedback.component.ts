@@ -24,9 +24,13 @@ export class FeedbackComponent implements OnInit {
     e.preventDefault();
     var feedback = e.target.elements[0].value;
     //alert("in feedbackSubmit "+feedback)
-    this.addFeedback(feedback)
-    this.onSaveFeedback()
-    this.router.navigate(['/homepage']);
+    if(feedback=="")
+      alert("Please provide some feedback")
+    else {
+      this.addFeedback(feedback)
+      this.onSaveFeedback()
+      this.router.navigate(['/homepage']);
+    }
   }
   addFeedback(feedback1) {
     //alert("in add feedback")

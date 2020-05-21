@@ -49,12 +49,15 @@ export class RegistrationComponent implements OnInit {
             ||this.registerForm.value.password!=this.registerForm.value.confirmPassword||this.a==-1||this.b==-1||
             this.registerForm.value.acceptTerms==false)
             return;
+        else if(this.userDetails.isUserExist(this.registerForm.value.email)) {
+            alert("Account already exist with this Email ID");
+        }
         else{
             this.onAddUser(this.registerForm.value.firstName,this.registerForm.value.lastName,this.registerForm.value.email,this.registerForm.value.password)
             this.onSaveUser();
             this.user.setUserLoggedIn();
             this.user.setEmail(this.registerForm.value.email)
-            this.router.navigate(['/homepage']);
+            this.router.navigate(['/login']);
         }
     }
 
@@ -69,10 +72,12 @@ export class RegistrationComponent implements OnInit {
             ln:lm1,
             emailId:emailId1,
             pass:pass1,
-            wishlist:{
-                title:"Madha",
-                poster:"https://m.media-amazon.com/images/M/MV5BYjk0NWY0MDgtNmI2OC00OGEwLTllYjctNmU0YzRhNDM5Mjg3XkEyXkFqcGdeQXVyNzgxMjUzNzk@._V1_SX300.jpg"
-            }
+            wishlist:[
+                {
+                  title:"Madha",
+                  poster:"https://m.media-amazon.com/images/M/MV5BYjk0NWY0MDgtNmI2OC00OGEwLTllYjctNmU0YzRhNDM5Mjg3XkEyXkFqcGdeQXVyNzgxMjUzNzk@._V1_SX300.jpg"
+                }
+            ]
         })
     }
     onSaveUser(){

@@ -28,8 +28,8 @@ export class LoginComponent implements OnInit {
   loginUser(e) {
     e.preventDefault();
     var username = e.target.elements[0].value;
-    this.email=e.target.elements[0].value;
     var password = e.target.elements[1].value;
+    this.email=e.target.elements[0].value;
     this.temp=this.userDetails.fun(username,password);
     //alert("temp is  "+this.temp)
     //alert("user details are  "+this.userDetails.users)

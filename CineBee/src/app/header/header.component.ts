@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   }
   onLogout() {
     this.user.reSetUserLoggedIn();
-    this.router.navigate(['firstpage']);
+    //this.router.navigate(['firstpage']);
   }
   onSearch(ele) {
     this.api.setSearch(ele.target.elements[0].value);

@@ -85,7 +85,15 @@ export class FirebaseUsageService {
       title:ti,
       poster:po
     })
-    console.log(this.users)
+    //console.log(this.users)
+  }
+  isUserExist(em) {
+    var flag=false;
+    this.users.forEach(element => {
+      if(element.emailId==em)
+        flag=true;
+    });
+    return flag;
   }
   fun(email,password)
   {
