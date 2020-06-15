@@ -48,6 +48,7 @@ export class FirebaseUsageService {
   ]
   raterev=[
     {
+      userMail:"trepala999@gmail.com",
       title:"Bheeshma",
       rate:3,
       rev:"Good movie"
@@ -81,10 +82,20 @@ export class FirebaseUsageService {
         temp=element;
       }
     });
-    temp.wishlist.push({
-      title:ti,
-      poster:po
-    })
+    var f=false;
+    temp.wishlist.slice(1).forEach(element => {
+      if(element.title==ti)
+        f=true;
+    });
+    if(f)
+      alert("Already exists in your wishlist")
+    else {
+      temp.wishlist.push({
+        title:ti,
+        poster:po
+      })
+      alert("Added to your wishlist")
+    }
     //console.log(this.users)
   }
   isUserExist(em) {
@@ -154,7 +165,6 @@ export class FirebaseUsageService {
         rate:2,
         rev:"There are few good moments, other than that it's just a big mental fest"
       }
-      
     ]
     //alert("in fetch raterev  "+rr+"  "+tit)
     this.raterev.forEach(element => {

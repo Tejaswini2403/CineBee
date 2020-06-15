@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./homepage-body.component.css']
 })
 export class HomepageBodyComponent implements OnInit {
-  /*
-  trending=[
+  
+  /*trending=[
     {
       Title:"Sye Raa Narasimha Reddy",
       Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
@@ -45,7 +45,7 @@ export class HomepageBodyComponent implements OnInit {
       Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
     }
   ]
-  malyalam=[
+  malayalam=[
     {
       Title:"Sye Raa Narasimha Reddy",
       Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
@@ -81,6 +81,7 @@ export class HomepageBodyComponent implements OnInit {
       Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
     }
   ]*/
+  
   Telugu=[
     {
 
@@ -467,6 +468,7 @@ slideshow=[
     "Poster": "../../assets/images/trendingMovies/kgf.jpg",
   }
 ]
+
 Action=[
   {
     "Title": "Bheeshma",
@@ -1082,7 +1084,11 @@ Trending=[
   romanceArray: any = [[]];
   crimeArray: any = [[]];
   comedyArray: any = [[]];
+  horrorArray: any = [[]];
+  adventureArray: any = [[]];
+  familyArray: any = [[]];
   chunk(arr) {
+    //alert("here2")
     let R = [];
     for (let i = 0, len = arr.length; i < len; i += 6) {
       R.push(arr.slice(i, i + 6));
@@ -1094,7 +1100,14 @@ Trending=[
   }
 
   ngOnInit(): void {
-    /*this.getTrending()
+    //alert("before");
+    this.getMatrices()
+    //setTimeout(_ => {this.getMatrices()},1000);
+    //Promise.resolve().then(_ => {this.getArrays()});
+    //alert("after");
+  }
+  /*getArrays() {
+    this.getTrending()
     this.getTelugu()
     this.getHindi()
     this.getEnglish()
@@ -1105,29 +1118,34 @@ Trending=[
     this.getHorror()
     this.getAction()
     this.getFamily()
-    this.getComedy()*/
-    this.teluguArray = this.chunk(this.Telugu)
-    this.hindiArray = this.chunk(this.Hindi)
-    this.englishArray = this.chunk(this.English)
-    this.tamilArray = this.chunk(this.Tamil)
-    this.malyalamArray = this.chunk(this.Malayalam)
-    this.kannadaArray = this.chunk(this.Kannada)
-    this.actionArray = this.chunk(this.Action)
-    this.dramaArray = this.chunk(this.Drama)
-    this.comedyArray = this.chunk(this.Comedy)
-    this.crimeArray = this.chunk(this.Crime)
-    this.thrillerArray = this.chunk(this.Thriller)
-    this.romanceArray = this.chunk(this.Romance)
-    this.trendingArray = this.chunk(this.Trending)
+    this.getComedy()
+  }*/
+  getMatrices() {
+    this.teluguArray = this.chunk(this.Telugu.slice(1))
+    this.hindiArray = this.chunk(this.Hindi.slice(1))
+    this.englishArray = this.chunk(this.English.slice(1))
+    this.tamilArray = this.chunk(this.Tamil.slice(1))
+    this.malyalamArray = this.chunk(this.Malayalam.slice(1))
+    this.kannadaArray = this.chunk(this.Kannada.slice(1))
+    this.actionArray = this.chunk(this.Action.slice(1))
+    this.dramaArray = this.chunk(this.Drama.slice(1))
+    //this.familyArray = this.chunk(this.Family.slice(1))
+    this.comedyArray = this.chunk(this.Comedy.slice(1))
+    this.crimeArray = this.chunk(this.Crime.slice(1))
+    this.thrillerArray = this.chunk(this.Thriller.slice(1))
+    //this.adventureArray = this.chunk(this.adventure.slice(1))
+    //this.horrorArray = this.chunk(this.horror.slice(1))
+    this.romanceArray = this.chunk(this.Romance.slice(1))
+    this.trendingArray = this.chunk(this.Trending.slice(1))
   }
 
   onPosterClick(tit) {
     this.api.setSearch(tit);
     this.router.navigate(['poster']);
   }
-  /*
-  getTrending() {
-    alert("Here")
+  
+  /*getTrending() {
+    //alert("Here1")
     for(let i=0;i<5;i++) {
       this.api.trending("te").subscribe((data)=>{
         this.trending.push({
@@ -1206,7 +1224,7 @@ Trending=[
   getMalyalam() {
     for(let i=0;i<15;i++) {
       this.api.language("ml").subscribe((data)=>{
-        this.malyalam.push({
+        this.malayalam.push({
           Title:data['results'][i]['title'],
           Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
         })
@@ -1342,7 +1360,7 @@ Trending=[
         })
       })
     }
-  }
-  */
+  }*/
+  
 
 }

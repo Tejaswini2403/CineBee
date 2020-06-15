@@ -59,11 +59,22 @@ export class PosterComponent implements OnInit {
     this.onFetchData()
   }
   onAdd(title,rating,review) {
-    this.raterev.push({
-      title:title,
-      rate:rating,
-      rev:review
-    })
+    var fl=true;
+    this.raterev.forEach(element => {
+      if(element.userMail==this.user.getEmail()&&element.title==title) {
+        element.rate=rating
+        element.rev=review
+        fl=false
+      }
+    });
+    if(fl) {
+      this.raterev.push({
+        userMail:this.user.getEmail(),
+        title:title,
+        rate:rating,
+        rev:review
+      })
+    }
   }
   onSave() {
     this.firebase.saveRateRev(this.raterev).subscribe(
@@ -89,7 +100,6 @@ export class PosterComponent implements OnInit {
     if(this.user.getUserLoggedIn()) {
       var email=this.user.getEmail();
       this.firebase.saveWishlist(email,this.info.Title,this.info.Poster)
-      alert("Added to your wishlist")
     }
     else {
       alert("Please Login to your account to add to your wishlist")
