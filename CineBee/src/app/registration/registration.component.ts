@@ -18,6 +18,7 @@ export class RegistrationComponent implements OnInit {
     a:Number;
     b:Number;
     users
+    isPassValid:boolean = false
     
     constructor(private router:Router, private user:UserService,private api:APIService, private formBuilder: FormBuilder,private userDetails:FirebaseUsageService) { }
 
@@ -26,7 +27,7 @@ export class RegistrationComponent implements OnInit {
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             email: ['', [Validators.required, Validators.email]],
-            password: ['', [Validators.required, Validators.minLength(6)]],
+            password: ['', [Validators.required,Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{7,}')]],
             confirmPassword: ['', Validators.required],
             acceptTerms: [false, Validators.requiredTrue]
         }, {
