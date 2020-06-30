@@ -8,12 +8,13 @@ import { element } from 'protractor';
 })
 export class FirebaseUsageService {
   bool:boolean=false;
+
   users=[
     {
         fn:'Tejaswini',
         ln:'Repala',
         emailId:'trepala999@gmail.com',
-        pass:'cinebee143',
+        pass:'CineBee@143',
         wishlist:[
           {
             title:"Madha",
@@ -25,7 +26,7 @@ export class FirebaseUsageService {
         fn:'Swetha',
         ln:'Gupta Gande',
         emailId:'swetha12gupta@gmail.com',
-        pass:'cinebee143',
+        pass:'CineBee@143',
         wishlist:[
           {
             title:"Madha",
@@ -37,7 +38,7 @@ export class FirebaseUsageService {
         fn:'Vishnu',
         ln:'Sai',
         emailId:'vishnusai3206@gmail.com',
-        pass:'cinebee143',
+        pass:'CineBee@143',
         wishlist:[
           {
             title:"Madha",
@@ -59,22 +60,27 @@ export class FirebaseUsageService {
       feedback:'Nice application'
     }
   ]
+
   urlUser='https://cinebee-5f72a.firebaseio.com/users/users1.json';
   urlRateRev='https://cinebee-5f72a.firebaseio.com/RatingsReviews/raterev1.json'
   urlFeedback='https://cinebee-5f72a.firebaseio.com/Feedbacks/feedbacks1.json';
   fn='Tejaswini'
   ln='Repala'
+
   constructor(private http:HttpClient) { }
 
   saveUser(users:any[]){
     return this.http.put(this.urlUser,users)
   }
+
   saveRateRev(raterev:any[]) {
     return this.http.put(this.urlRateRev,raterev)
   }
+
   saveFeedback(feedbacks:any[]) {
     return this.http.put(this.urlFeedback,feedbacks)
   }
+
   saveWishlist(em,ti,po) {
     var temp
     this.users.forEach(element => {
@@ -98,6 +104,7 @@ export class FirebaseUsageService {
     }
     //console.log(this.users)
   }
+
   isUserExist(em) {
     var flag=false;
     this.users.forEach(element => {
@@ -106,6 +113,7 @@ export class FirebaseUsageService {
     });
     return flag;
   }
+
   fun(email,password)
   {
     this.users.forEach(element => {
@@ -115,9 +123,11 @@ export class FirebaseUsageService {
     });
     return this.bool;
   }
+
   fetchData() {
     return this.http.get(this.urlUser)
   }
+
   onFirstNameFecth(email) {
     this.users.forEach(element => {
       if(element.emailId==email){
@@ -126,6 +136,7 @@ export class FirebaseUsageService {
     });
     return this.fn;
   }
+
   onLastNameFecth(email) {
     this.users.forEach(element => {
       if(element.emailId==email){
@@ -134,6 +145,7 @@ export class FirebaseUsageService {
     });
     return this.ln;
   }
+
   wish
   OnWishlistFetch(email) {
     this.users.forEach(element => {
@@ -143,6 +155,7 @@ export class FirebaseUsageService {
     });
     return this.wish;
   }
+  
   fetchRateRev(tit) {
     var rr=[
       {

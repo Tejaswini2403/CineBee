@@ -9,80 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HomepageBodyComponent implements OnInit {
   
-  /*trending=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  telugu=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  hindi=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  english=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  kannada=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  tamil=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  malayalam=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  adventure=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  horror=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  action=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  comedy=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]
-  family=[
-    {
-      Title:"Sye Raa Narasimha Reddy",
-      Poster:"https://image.tmdb.org/t/p/w500/wswp8DlifUHzBFrGl7Y8bphF1gF.jpg"
-    }
-  ]*/
-  
-  Telugu=[
+Telugu=[
     {
 
        "Title": "Ala Vaikunthapurramuloo",
@@ -1032,7 +959,7 @@ Trending=[
   },
  {
 
-    "Title": "Ala Vaikunthapurramuloo",
+    "Title": "Aswathama",
     "Poster": "https://m.media-amazon.com/images/M/MV5BNWE3ZTc1ZjItNWIyMy00Njk4LWJkNjQtNTgzMjg3NmIzNzRlXkEyXkFqcGdeQXVyNjU0Nzg1NzY@._V1_SX300.jpg",
 },
 {
@@ -1084,9 +1011,6 @@ Trending=[
   romanceArray: any = [[]];
   crimeArray: any = [[]];
   comedyArray: any = [[]];
-  horrorArray: any = [[]];
-  adventureArray: any = [[]];
-  familyArray: any = [[]];
   chunk(arr) {
     //alert("here2")
     let R = [];
@@ -1102,24 +1026,8 @@ Trending=[
   ngOnInit(): void {
     //alert("before");
     this.getMatrices()
-    //setTimeout(_ => {this.getMatrices()},1000);
-    //Promise.resolve().then(_ => {this.getArrays()});
-    //alert("after");
   }
-  /*getArrays() {
-    this.getTrending()
-    this.getTelugu()
-    this.getHindi()
-    this.getEnglish()
-    this.getKannada()
-    this.getTamil()
-    this.getMalyalam()
-    this.getAdventure()
-    this.getHorror()
-    this.getAction()
-    this.getFamily()
-    this.getComedy()
-  }*/
+
   getMatrices() {
     this.teluguArray = this.chunk(this.Telugu.slice(1))
     this.hindiArray = this.chunk(this.Hindi.slice(1))
@@ -1129,12 +1037,9 @@ Trending=[
     this.kannadaArray = this.chunk(this.Kannada.slice(1))
     this.actionArray = this.chunk(this.Action.slice(1))
     this.dramaArray = this.chunk(this.Drama.slice(1))
-    //this.familyArray = this.chunk(this.Family.slice(1))
     this.comedyArray = this.chunk(this.Comedy.slice(1))
     this.crimeArray = this.chunk(this.Crime.slice(1))
     this.thrillerArray = this.chunk(this.Thriller.slice(1))
-    //this.adventureArray = this.chunk(this.adventure.slice(1))
-    //this.horrorArray = this.chunk(this.horror.slice(1))
     this.romanceArray = this.chunk(this.Romance.slice(1))
     this.trendingArray = this.chunk(this.Trending.slice(1))
   }
@@ -1144,223 +1049,4 @@ Trending=[
     this.router.navigate(['poster']);
   }
   
-  /*getTrending() {
-    //alert("Here1")
-    for(let i=0;i<5;i++) {
-      this.api.trending("te").subscribe((data)=>{
-        this.trending.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.trending("hi").subscribe((data)=>{
-        this.trending.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.trending("en").subscribe((data)=>{
-        this.trending.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getTelugu() {
-    for(let i=0;i<15;i++) {
-      this.api.language("te").subscribe((data)=>{
-        this.telugu.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getHindi() {
-    for(let i=0;i<15;i++) {
-      this.api.language("hi").subscribe((data)=>{
-        this.hindi.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getEnglish() {
-    for(let i=0;i<15;i++) {
-      this.api.language("en").subscribe((data)=>{
-        this.english.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getKannada() {
-    for(let i=0;i<15;i++) {
-      this.api.language("kn").subscribe((data)=>{
-        this.kannada.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getTamil() {
-    for(let i=0;i<15;i++) {
-      this.api.language("ta").subscribe((data)=>{
-        this.tamil.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getMalyalam() {
-    for(let i=0;i<15;i++) {
-      this.api.language("ml").subscribe((data)=>{
-        this.malayalam.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getAction() {
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("28","te").subscribe((data)=>{
-        this.action.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("28","hi").subscribe((data)=>{
-        this.action.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("28","en").subscribe((data)=>{
-        this.action.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getHorror() {
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("27","te").subscribe((data)=>{
-        this.horror.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("27","hi").subscribe((data)=>{
-        this.horror.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("27","en").subscribe((data)=>{
-        this.horror.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getComedy() {
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("35","te").subscribe((data)=>{
-        this.comedy.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("35","hi").subscribe((data)=>{
-        this.comedy.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("35","en").subscribe((data)=>{
-        this.comedy.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getAdventure() {
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("12","te").subscribe((data)=>{
-        this.adventure.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("12","hi").subscribe((data)=>{
-        this.adventure.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("12","en").subscribe((data)=>{
-        this.adventure.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }
-  getFamily() {
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("10751","te").subscribe((data)=>{
-        this.family.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("10751","hi").subscribe((data)=>{
-        this.family.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-    for(let i=0;i<5;i++) {
-      this.api.genreAndLanguage("10751","en").subscribe((data)=>{
-        this.family.push({
-          Title:data['results'][i]['title'],
-          Poster:'https://image.tmdb.org/t/p/w500'+data['results'][i]['poster_path']
-        })
-      })
-    }
-  }*/
-  
-
 }
